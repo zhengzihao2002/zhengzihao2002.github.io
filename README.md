@@ -1,1 +1,1 @@
-<a target="__blank" href="https://zhengzihao2002.github.io/index.html">Portfolio Website Here</a>
+<a target="__blank" href="https://zhengzihao2002.github.io">Portfolio Website Here</a>
