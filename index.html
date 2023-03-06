@@ -8,205 +8,13 @@
 
     <!-- 关键字 -->
     <meta name="keywords" content="Zihao Zheng,Portfolio,Computer Science,CS,Rutgers">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon1.ico" type="image/x-icon" />
     <link rel="stylesheet" href="icomoon/style.css"></head>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/index.js"></script>
+    
 
-	<style>
-		body {
-			/* background-color: #F2F9FD; */
-            background-color: rgb(245, 245, 245);
-			color: #FFFFFF;
-			margin: 0;
-			padding: 0;
-			font-family: Arial, sans-serif;
-		}
-        .left-effects {
-            position: fixed;
-            bottom: 50px;
-            left: 50px;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            /* background-color: #95c6f1; */
-            background-color: #76b9f4;
 
-            -webkit-filter: blur(150px);
-            filter: blur(150px);
-            opacity: 0.25;
-            pointer-events: none;
-            z-index: -1;
-
-            animation: moveUpDown 10s ease-in-out infinite alternate;
-        }
-
-        .right-effects {
-            position: fixed;
-            top: 50px;
-            right: 50px;
-            bottom: auto;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            /* background-color: #b0dbb0; */
-            background-color: #a8ffa8;
-            -webkit-filter: blur(150px);
-            filter: blur(150px);
-            opacity: 0.25;
-            pointer-events: none;
-            z-index: -1;
-
-            animation: moveUpDown2 10s ease-in-out infinite alternate;
-        }
-        @keyframes moveUpDown {
-            50%{
-                transform: translateY(-10%);
-                background-color: #2323d8;
-            }
-            100%{
-                transform: translateY(10%);
-                background-color: #9761f5;
-            }
-        }
-        @keyframes moveUpDown2 {
-            50%{
-                transform: translateY(10%);
-                background-color: #93ea47;
-            }
-            100%{
-                transform: translateY(-10%);
-                background-color: #f5cb61;
-            }
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100px;
-            padding: 0 50px;
-            /* background-color: #F5F8FF; White with light blue tint */
-            background-color: transparent;
-            transition: height 0.2s ease-in-out;
-
-            position: absolute;top: 0;
-            width: 100%; box-sizing: border-box;
-        }
-        
-
-        
-        .logo {
-            font-family: 'Brush Script','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1.6rem;
-            font-weight: bold;
-            /* color: #2C3A47; */
-            /* color: #7da7ce; */
-            color: #cb2121;
-            transition: font-size 0.2s ease-in-out;
-            
-        }
-        .logo>h1{
-            transition: font-size 0.2s ease-in-out;
-            /* background: linear-gradient(to right, #87CEFA, #ff857a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; */
-        }
-        nav>ul>li>a{
-            transition: font-size 0.2s ease-in-out;
-        }
-
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav li {
-            margin-left: 30px;
-        }
-
-        nav li:first-child {
-            margin-left: 0;
-        }
-
-        nav a {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: #2C3A47;
-            /* color: #7da7ce; */
-            position: relative;
-         }
-
-        nav a::before {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(to right, #243B55, #21897E); /* Blue to Green gradient */
-            transition: width 0.3s;
-        }
-
-        nav a:hover::before {
-            width: 100%;
-        }
-
-        /* section 1 */
-        .intro {
-            height: 100vh; /* Sets the height of the section to be 100% of the viewport height */
-            display: flex; /* Uses flexbox to position image and text side-by-side */
-            justify-content: center; /* Centers content horizontally */
-            align-items: center; /*Centers content vertically */
-            margin-left: 7%;margin-right: 7%;
-            border-bottom: solid lightgray 2px;
-        }
-
-        .intro-image {
-            box-sizing: border-box;
-            width: 40%;
-            /* padding-left: 5%; */
-        }
-
-        .intro-image img {
-            width: 400px;
-        }
-        .intro-text{
-            width: 60%;
-            /* padding-left: 100px;padding-right: 100px; */
-        }
-        .intro-text h2 {
-            font-weight: bold;
-            /* font-size: 5.5rem; */
-            font-size: 60px;
-            color: black;
-            text-align: center;
-        }
-
-        /* section2 */
-        .info{
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .intro-text p {
-            font-size: 1.2rem;
-            color:rgb(111, 111, 111) ;
-        }
-        .info-image{
-            width: 30%;
-        }
-        .info-text{
-            width: 60%;
-        }
-
-	</style>
 </head>
 <body>
 	<header>
@@ -223,34 +31,7 @@
           </ul>
         </nav>
 
-        <script>
-            // get the header element
-            const header = document.querySelector('header');
-            const logo = header.querySelector('.logo>h1');
-            const options = header.querySelectorAll('nav ul li a');
-    
-            // add an event listener to listen for scroll events
-            window.addEventListener('scroll', () => {
-            // check if we have scrolled more than 1px from the top
-            if (window.scrollY > 1) {
-                // if we have, decrease the height of the header to 80px
-                header.style.height = '80px';
-                logo.style.fontSize = '1.5em';
-                for(let i=0;i<options.length;i++){
-                    options[i].style.fontSize='1.15em';
-                }
-                
-            }else {
-                // if we haven't, set the height of the header back to its original value
-                header.style.height = '';
-                logo.style.fontSize = '';
-                for(let i=0;i<options.length;i++){
-                    options[i].style.fontSize='';
-                }
-            }
-            });
-    
-        </script>
+        
     </header>
       
 	<main>
@@ -276,7 +57,9 @@
 
         <!-- section2 - info -->
         <section class="info">
-            <div class="info-image"></div>
+            <div class="info-image">
+                <img src="selfie2.png" alt="">
+            </div>
             <div class="into-text"></div>
         </section>
           
