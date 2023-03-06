@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Zihao Zheng</title>
+    <meta name="description"
+        content="Welcome to the personal website of Zihao Zheng, a junior studying Computer Science at Rutgers University. Here, you'll find information about my academic background, programming projects, and professional experiences. Learn more about my passion for technology, problem-solving, and innovation in the field of computer science" />
+
+    <!-- 关键字 -->
+    <meta name="keywords" content="Zihao Zheng,Portfolio,Computer Science,CS,Rutgers">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="icomoon/style.css"></head>
+
+	<style>
+		body {
+			/* background-color: #F2F9FD; */
+            background-color: rgb(245, 245, 245);
+			color: #FFFFFF;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+        .left-effects {
+            position: fixed;
+            bottom: 50px;
+            left: 50px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            /* background-color: #95c6f1; */
+            background-color: #76b9f4;
+
+            -webkit-filter: blur(150px);
+            filter: blur(150px);
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: -1;
+
+            animation: moveUpDown 10s ease-in-out infinite alternate;
+        }
+
+        .right-effects {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            bottom: auto;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            /* background-color: #b0dbb0; */
+            background-color: #a8ffa8;
+            -webkit-filter: blur(150px);
+            filter: blur(150px);
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: -1;
+
+            animation: moveUpDown2 10s ease-in-out infinite alternate;
+        }
+        @keyframes moveUpDown {
+            50%{
+                transform: translateY(-10%);
+                background-color: #2323d8;
+            }
+            100%{
+                transform: translateY(10%);
+                background-color: #9761f5;
+            }
+        }
+        @keyframes moveUpDown2 {
+            50%{
+                transform: translateY(10%);
+                background-color: #93ea47;
+            }
+            100%{
+                transform: translateY(-10%);
+                background-color: #f5cb61;
+            }
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            padding: 0 50px;
+            /* background-color: #F5F8FF; White with light blue tint */
+            background-color: transparent;
+            transition: height 0.2s ease-in-out;
+
+            position: absolute;top: 0;
+            width: 100%; box-sizing: border-box;
+        }
+        
+
+        
+        .logo {
+            font-family: 'Brush Script','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.6rem;
+            font-weight: bold;
+            /* color: #2C3A47; */
+            /* color: #7da7ce; */
+            color: #cb2121;
+            transition: font-size 0.2s ease-in-out;
+            
+        }
+        .logo>h1{
+            transition: font-size 0.2s ease-in-out;
+            /* background: linear-gradient(to right, #87CEFA, #ff857a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; */
+        }
+        nav>ul>li>a{
+            transition: font-size 0.2s ease-in-out;
+        }
+
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin-left: 30px;
+        }
+
+        nav li:first-child {
+            margin-left: 0;
+        }
+
+        nav a {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #2C3A47;
+            /* color: #7da7ce; */
+            position: relative;
+         }
+
+        nav a::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(to right, #243B55, #21897E); /* Blue to Green gradient */
+            transition: width 0.3s;
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        /* subsection 1 */
+        .intro {
+            height: 100vh; /* Sets the height of the section to be 100% of the viewport height */
+            display: flex; /* Uses flexbox to position image and text side-by-side */
+            justify-content: center; /* Centers content horizontally */
+            align-items: center; /*Centers content vertically */
+        }
+
+        .intro-image {
+            box-sizing: border-box;
+            width: 40%;
+            padding-left: 5%;
+        }
+
+        .intro-image img {
+            width: 400px;
+        }
+        .intro-text{
+            width: 60%;
+            padding-left: 100px;padding-right: 100px;
+
+        }
+        .intro-text h2 {
+            font-weight: bold;
+            /* font-size: 5.5rem; */
+            font-size: 60px;
+            color: black;
+            text-align: center;
+        }
+
+        .intro-text p {
+            font-size: 1.2rem;
+            color:rgb(111, 111, 111) ;
+        }
+
+
+	</style>
+</head>
+<body>
+	<header>
+        <div class="logo">
+          <h1>ZHENG</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="../index.html">EN</a></li>
+          </ul>
+        </nav>
+
+        <script>
+            // get the header element
+            const header = document.querySelector('header');
+            const logo = header.querySelector('.logo>h1');
+            const options = header.querySelectorAll('nav ul li a');
+    
+            // add an event listener to listen for scroll events
+            window.addEventListener('scroll', () => {
+            // check if we have scrolled more than 1px from the top
+            if (window.scrollY > 1) {
+                // if we have, decrease the height of the header to 80px
+                header.style.height = '80px';
+                logo.style.fontSize = '1.5em';
+                for(let i=0;i<options.length;i++){
+                    options[i].style.fontSize='1.15em';
+                }
+                
+            }else {
+                // if we haven't, set the height of the header back to its original value
+                header.style.height = '';
+                logo.style.fontSize = '';
+                for(let i=0;i<options.length;i++){
+                    options[i].style.fontSize='';
+                }
+            }
+            });
+    
+        </script>
+    </header>
+      
+	<main>
+		<div class="left-effects"></div>
+		<div class="right-effects"></div>
+		<!-- Main section content goes here -->
+
+        <section class="intro">
+            <div class="intro-image">
+              <img src="郑子豪.png" alt="Zihao Zheng in High School, 2020">
+            </div>
+            <div class="intro-text">
+              <h2 style="padding: 0;margin: 0;">I'm Zihao Zheng,
+              </h2>
+              <h2 style="padding:0;margin:0;"><span style="background: linear-gradient(to right, #12c2e9, #7c4ff6, #f64f6b);-webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; font-size: 30px;">a Computer Science Student @ Rutgers</span></h2>
+              <p>I am a current student at Rutgers University pursuing a B.S in Computer Science, I am on track to graduate in May 2024. My primary interests within the field of computer science are Artificial Intelligence, Machine Learning, and game development. As a highly motivated student, I have achieved the honor of being on the dean's list for over three semesters, indicating my exceptional academic performance.
+
+                I aspire to gain a deeper understanding of Artificial Intelligence and Machine Learning and apply my knowledge to real-world scenarios. In the future, I hope to contribute to the development of these fields by utilizing my skills and knowledge. Ultimately, my goal is to become a proficient software engineer who can create innovative and secure software solutions.</p>
+            </div>
+        </section>
+          
+	</main>
+	<footer>
+		<!-- Footer section content goes here -->
+	</footer>
+</body>
+</html>
