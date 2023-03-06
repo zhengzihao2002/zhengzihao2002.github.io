@@ -157,18 +157,20 @@
             width: 100%;
         }
 
-        /* subsection 1 */
+        /* section 1 */
         .intro {
             height: 100vh; /* Sets the height of the section to be 100% of the viewport height */
             display: flex; /* Uses flexbox to position image and text side-by-side */
             justify-content: center; /* Centers content horizontally */
             align-items: center; /*Centers content vertically */
+            margin-left: 7%;margin-right: 7%;
+            border-bottom: solid lightgray 2px;
         }
 
         .intro-image {
             box-sizing: border-box;
             width: 40%;
-            padding-left: 5%;
+            /* padding-left: 5%; */
         }
 
         .intro-image img {
@@ -176,8 +178,7 @@
         }
         .intro-text{
             width: 60%;
-            padding-left: 100px;padding-right: 100px;
-
+            /* padding-left: 100px;padding-right: 100px; */
         }
         .intro-text h2 {
             font-weight: bold;
@@ -187,11 +188,23 @@
             text-align: center;
         }
 
+        /* section2 */
+        .info{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .intro-text p {
             font-size: 1.2rem;
             color:rgb(111, 111, 111) ;
         }
-
+        .info-image{
+            width: 30%;
+        }
+        .info-text{
+            width: 60%;
+        }
 
 	</style>
 </head>
@@ -206,7 +219,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="zh/" style="color:red;font-weight:bolder;">中</a></li>
+            <li><a href="zh/" style="color:red;font-weight:bolder;">中/ZH</a></li>
           </ul>
         </nav>
 
@@ -245,6 +258,7 @@
 		<div class="right-effects"></div>
 		<!-- Main section content goes here -->
 
+        <!-- section1 - intro -->
         <section class="intro">
             <div class="intro-image">
               <img src="郑子豪.png" alt="Zihao Zheng in High School, 2020">
@@ -258,6 +272,12 @@
 
                 I aspire to gain a deeper understanding of Artificial Intelligence and Machine Learning and apply my knowledge to real-world scenarios. In the future, I hope to contribute to the development of these fields by utilizing my skills and knowledge. Ultimately, my goal is to become a proficient software engineer who can create innovative and secure software solutions.</p>
             </div>
+        </section>
+
+        <!-- section2 - info -->
+        <section class="info">
+            <div class="info-image"></div>
+            <div class="into-text"></div>
         </section>
           
 	</main>

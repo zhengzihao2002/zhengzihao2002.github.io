@@ -8,8 +8,8 @@
 
     <!-- 关键字 -->
     <meta name="keywords" content="Zihao Zheng,Portfolio,Computer Science,CS,Rutgers">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="icomoon/style.css"></head>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../icomoon/style.css"></head>
 
 	<style>
 		body {
@@ -157,18 +157,20 @@
             width: 100%;
         }
 
-        /* subsection 1 */
+        /* section 1 */
         .intro {
             height: 100vh; /* Sets the height of the section to be 100% of the viewport height */
             display: flex; /* Uses flexbox to position image and text side-by-side */
             justify-content: center; /* Centers content horizontally */
             align-items: center; /*Centers content vertically */
+            margin-left: 7%;margin-right: 7%;
+            border-bottom: solid lightgray 2px;
         }
 
         .intro-image {
             box-sizing: border-box;
             width: 40%;
-            padding-left: 5%;
+            /* padding-left: 5%; */
         }
 
         .intro-image img {
@@ -176,8 +178,7 @@
         }
         .intro-text{
             width: 60%;
-            padding-left: 100px;padding-right: 100px;
-
+            /* padding-left: 100px;padding-right: 100px; */
         }
         .intro-text h2 {
             font-weight: bold;
@@ -187,9 +188,22 @@
             text-align: center;
         }
 
+        /* section2 */
+        .info{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .intro-text p {
             font-size: 1.2rem;
             color:rgb(111, 111, 111) ;
+        }
+        .info-image{
+            width: 30%;
+        }
+        .info-text{
+            width: 60%;
         }
 
 
@@ -247,17 +261,23 @@
 
         <section class="intro">
             <div class="intro-image">
-              <img src="郑子豪.png" alt="郑子豪高中时期的照片">
+              <img src="../郑子豪.png" alt="郑子豪高中时期的照片">
             </div>
             <div class="intro-text">
               <h2 style="padding: 0;margin: 0;">你好！我叫郑子豪,
               </h2>
               <h2 style="padding:0;margin:0;"><span style="background: linear-gradient(to right, #12c2e9, #7c4ff6, #f64f6b);-webkit-background-clip: text;
                 -webkit-text-fill-color: transparent; font-size: 30px;">一位来自罗格斯的CS学生！</span></h2>
-              <p>我是Rutgers大学的在校生，正在攻读计算机科学学士学位，计划于2024年5月毕业。我在计算机科学领域主要感兴趣的方向是人工智能、机器学习和游戏开发。作为一个高度积极进取的学生，我已经连续三个学期荣获教务长名单的荣誉，这表明我在学业上表现出色。
+              <p>我是罗格斯大学的在校生，正在攻读计算机科学学士学位并计划于2024年5月毕业。我在计算机科学领域主要兴趣的方向是人工智能、机器学习和游戏开发。作为一个高度积极进取的学生，我已经连续三个学期荣获教务长名单的荣誉。
 
                 作为一名学生，我热衷于学习新知识并将其应用于实际项目中。我熟练掌握多种编程语言，包括Java、Python和C++等，并且熟悉各种开发工具和框架，例如Eclipse和Visual Studio。我渴望深入了解人工智能和机器学习，并将我的知识应用于实际场景。未来，我希望通过运用我的技能和知识为这些领域的发展做出贡献。未来，我希望继续深入学习人工智能、机器学习和软件工程等领域的知识，以期将其应用于实际项目中并做出更大的贡献。我相信在未来的工作中，我能够充分发挥自己的优势，创造出高效、创新、安全的软件解决方案，为人类社会的发展做出贡献。我深信计算机科学的未来将会越来越重要，因为它涉及到现代社会中的许多方面，包括医疗保健、金融、教育和娱乐等。</p>
             </div>
+        </section>
+
+         <!-- section2 - info -->
+         <section class="info">
+            <div class="info-image"></div>
+            <div class="into-text"></div>
         </section>
           
 	</main>
