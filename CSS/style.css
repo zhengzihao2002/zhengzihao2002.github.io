@@ -139,8 +139,6 @@ nav a {
     color: #2C3A47;
     /* color: #7da7ce; */
     position: relative;
-
-
 }
 
 nav a::before {
@@ -152,6 +150,13 @@ nav a::before {
     height: 3px;
     background: linear-gradient(to right, #243B55, #21897E); /* Blue to Green gradient */
     transition: width 0.3s;
+}
+
+nav>ul>li:last-child>a{
+    font-style: italic;
+}
+nav>ul>li:last-child>a:hover::before{
+    width: 0;
 }
 
 nav a:hover::before {
