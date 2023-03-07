@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?we7zmr');
-  src:  url('fonts/icomoon.eot?we7zmr#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?we7zmr') format('truetype'),
-    url('fonts/icomoon.woff?we7zmr') format('woff'),
-    url('fonts/icomoon.svg?we7zmr#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?w9ibri');
+  src:  url('fonts/icomoon.eot?w9ibri#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?w9ibri') format('truetype'),
+    url('fonts/icomoon.woff?w9ibri') format('woff'),
+    url('fonts/icomoon.svg?w9ibri#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-picture_as_pdf:before {
+  content: "\e916";
+}
+.icon-document-file-pdf:before {
+  content: "\e915";
+}
 .icon-document-file-cpp:before {
   content: "\e90a";
 }
@@ -66,6 +72,29 @@
 }
 .icon-weixin:before {
   content: "\e902";
+}
+.icon-airplayvideo:before {
+  content: "\e904";
+}
+.icon-baidu1:before {
+  content: "\e905";
+  color: #2319dc;
+}
+.icon-c:before {
+  content: "\e90b";
+  color: #a8b9cc;
+}
+.icon-css3:before {
+  content: "\e90c";
+  color: #1572b6;
+}
+.icon-html5:before {
+  content: "\e90d";
+  color: #e34f26;
+}
+.icon-huawei:before {
+  content: "\e927";
+  color: #f00;
 }
 .icon-baidu:before {
   content: "\e910";
@@ -241,4 +270,7 @@
 }
 .icon-linkedin2:before {
   content: "\eaca";
+}
+.icon-file-pdf:before {
+  content: "\eadf";
 }

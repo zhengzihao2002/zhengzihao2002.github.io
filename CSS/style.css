@@ -276,6 +276,7 @@ a.social{
     display:inline-block;height: 50px;width:50px;line-height: 50px;background-color: #212529;border-radius: 50%;
 }
 a.social:hover{
+    /* WeChat Green */
     background-color: rgb(98, 175, 33);
 }
 .edu,.bio{
@@ -333,4 +334,29 @@ a.social:hover{
     font-size: 3rem;
     text-align: center;
     margin-bottom: 5px;
+}
+
+.resume{
+    display: inline-block;
+    background-color: #343a40;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 0.25rem;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0px 3px 3px 0px rgb(0 0 0 / 10%);
+    font-weight: 700;
+    padding: 1.25rem 2.5rem;
+
+    font-size: 18px;
+    transition: all 0.5s linear;
+}
+.resume:hover{
+    background-color: rgb(98, 175, 33);
+
+}
+.resume-container{
+    text-align: center;
+    width: 350px;
+    margin-top: 30px;
 }
