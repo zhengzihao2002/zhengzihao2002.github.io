@@ -89,6 +89,7 @@ header {
     position: fixed;top: 0;
     width: 100%; box-sizing: border-box;
 
+    z-index: 5;
 }
 
 
@@ -230,8 +231,9 @@ nav a:hover::before {
     border-radius: 50%;
 }
 .info-text{
-    width: 60%;
+    /* width: 60%; */
     flex: 6;
+    height: 100%;
 }
 
 
@@ -275,4 +277,60 @@ a.social{
 }
 a.social:hover{
     background-color: rgb(98, 175, 33);
+}
+.edu,.bio{
+    color:black;
+    padding: 30px;
+    margin-top: 20px;margin-bottom: 20px;
+    /* height: 50%; */
+    vertical-align:top;
+}
+.edu>div,.bio>div:first-child{
+    position: relative;
+}
+.edu>div>h1,.bio>div>h1{
+    font-size:1.75rem;
+    
+}
+.edu>span,.bio>span{
+    display: inline-block;
+    vertical-align: top;
+}
+.edu h3{
+    margin-top: 0;
+}
+.bio p{
+    font-size: 1.2rem;
+}
+.edu>div>h1:after,.bio>div>h1:after{
+    content: "";
+    bottom: -5px;
+    left: 0;
+    width: 75px;
+    height: 2px;
+    background-image: linear-gradient(to right, #12c2e9, #5678d6, #a966f5);
+    background-size: 120% 2px;
+    position: absolute;
+}
+
+
+.container{
+    margin-left: 7%;margin-right: 7%;
+}
+.skill{
+    color: #212529;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+
+    margin-left: 7%;margin-right: 7%;
+    border-bottom: solid lightgray 2px;
+
+    overflow: hidden;
+}
+.skill h1{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 5px;
 }
