@@ -83,11 +83,12 @@ header {
     
 
     
-
+    color:#212529;
     transition: all 0.5s ease-in-out;
 
     position: fixed;top: 0;
     width: 100%; box-sizing: border-box;
+
 }
 
 
@@ -151,6 +152,10 @@ nav a::before {
     background: linear-gradient(to right, #243B55, #21897E); /* Blue to Green gradient */
     transition: width 0.3s;
 }
+nav a.darkmode::before{
+    background: linear-gradient(to right, #cf3f3f, #3d7cc7); 
+
+}
 
 nav>ul>li:last-child>a{
     font-style: italic;
@@ -171,6 +176,8 @@ nav a:hover::before {
     align-items: center; /*Centers content vertically */
     margin-left: 7%;margin-right: 7%;
     border-bottom: solid lightgray 2px;
+
+    overflow: hidden;
 }
 
 .intro-image {
@@ -205,6 +212,8 @@ nav a:hover::before {
 
     margin-left: 7%;margin-right: 7%;
     border-bottom: solid lightgray 2px;
+
+    overflow: hidden;
 }
 .intro-text p {
     font-size: 1.2rem;
@@ -214,13 +223,56 @@ nav a:hover::before {
     /* width: 30%; */
     flex: 3;
     box-sizing: border-box;
-    margin-left: 10%;
+    margin-left: 5%;
 }
 .info-image img{
-    width: 250px;
+    width: 350px;
     border-radius: 50%;
 }
 .info-text{
     width: 60%;
     flex: 6;
+}
+
+
+ul.horizontal{
+    margin-bottom: 0;
+    margin-left: 0;margin-right: 0;
+    padding: 0;
+    list-style: none;
+    width: 350px;
+    box-sizing: border-box;
+    text-align: center;
+}
+ul.horizontal>li{
+    padding-left: 5px;padding-right: 5px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.social_icons{
+    font-size: 30px;
+    color: white;
+    /* background-color: #212529; */
+    vertical-align: middle;
+    background-color: inherit;
+
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+a:visited {
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+}
+
+a.social{
+    display:inline-block;height: 50px;width:50px;line-height: 50px;background-color: #212529;border-radius: 50%;
+}
+a.social:hover{
+    background-color: rgb(98, 175, 33);
 }
