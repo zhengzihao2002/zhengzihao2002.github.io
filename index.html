@@ -6,13 +6,20 @@
     <meta name="description"
         content="Welcome to the personal website of Zihao Zheng, a junior studying Computer Science at Rutgers University. Here, you'll find information about my academic background, programming projects, and professional experiences. Learn more about my passion for technology, problem-solving, and innovation in the field of computer science" />
 
-    <!-- 关键字 -->
+    <!-- Keywords -->
     <meta name="keywords" content="Zihao Zheng,Portfolio,Computer Science,CS,Rutgers">
+    <!-- Website icon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- custom icon css -->
     <link rel="stylesheet" href="icomoon/style.css"></head>
+    <!-- personal CSS -->
     <link rel="stylesheet" href="CSS/style.css">
+    <!-- personal js -->
     <script src="JS/index.js"></script>
-    
+    <!-- jquery -->
+    <script src="JS/jquery.js"></script>
+    <!-- swiper css -->
+    <link rel="stylesheet" href="swiper/swiper-bundle.css">
 
 
 
@@ -24,10 +31,10 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="javascript:;" id="Home">Home</a></li>
+            <li><a href="javascript:;" id="About">About</a></li>
+            <li><a href="javascript:;" id="Skills">Skills</a></li>
+            <li><a href="javascript:;" id="Portfolio">Portfolio</a></li>
             <li><a href="zh/" style="color:red;font-weight:bolder;">中/ZH</a></li>
           </ul>
         </nav>
@@ -246,13 +253,94 @@
             <div class="container">
                 <div class="head">
                     <h1>Portfolio</h1>
-                    <p>Below are just some of my projects. Find more of the lastest projects that I am working on at my GitHub page.</p>
+                    <p>Below are just some of my latest projects. Find more of the lastest projects that I am working on at my GitHub page.</p>
+                </div>
+                <div class="body">
+                    <!-- <div class="project"></div> -->
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                        <div class="swiper-slide project-container">Slide 1</div>
+                        <div class="swiper-slide project-container">Slide 2</div>
+                        <div class="swiper-slide project-container">Slide 3</div>
+                        <div class="swiper-slide project-container">Slide 4</div>
+                        <div class="swiper-slide project-container">Slide 5</div>
+                        <div class="swiper-slide project-container">Slide 6</div>
+                        <div class="swiper-slide project-container">Slide 7</div>
+                        <div class="swiper-slide project-container">Slide 8</div>
+                        <div class="swiper-slide project-container">Slide 9</div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    
                 </div>
             </div>
         </section>
+        <!-- animation for navigation bar -->
+        <script>
+            $("#Home").on("click",function(){
+                $("body,html").stop().animate({
+                    scrollTop:0
+                });
+            });
+            $("#About").on("click",function(){
+                $("body,html").stop().animate({
+                    scrollTop:$(".info").offset().top
+                });
+            });
+            $("#Skills").on("click",function(){
+                $("body,html").stop().animate({
+                    scrollTop:$(".skill").offset().top
+                });
+            });
+            $("#Portfolio").on("click",function(){
+                $("body,html").stop().animate({
+                    scrollTop:$(".portfolio").offset().top
+                });
+            });
+        </script>
+        <!-- animation for portfolio -->
+        <script src="./swiper/swiper-bundle.js"></script>
+        <!-- Initialize local Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        </script>
 	</main>
 	<footer>
+        <ul class="horizontal" style="float: left;">
+            <!-- shift+opt -->
+            <li>
+                <a href="https://github.com/zhengzihao2002" target="_blank" class="social">
+                    <span class="social_icons icon-github"></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/zhengzihao2002/" target="_blank" class="social">
+                    <span class="social_icons icon-linkedin"></span>
+                </a>
+            </li>
+            <li>
+                <a href="wechat.JPG" class="social" target="_blank">
+                    <span class="social_icons icon-wechat"></span>
+                </a>
+            </li>
+        </ul>
 		<!-- Footer section content goes here -->
+        <span style="float: right;">&copy; 2022 Zihao Zheng Portfolio. All Rights Reserved.</span>
 	</footer>
 </body>
 </html>

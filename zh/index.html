@@ -8,13 +8,19 @@
 
     <!-- 关键字 -->
     <meta name="keywords" content="Zihao Zheng,Portfolio,Computer Science,CS,Rutgers">
+    <!-- Website icon -->
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <!-- custom icon css -->
     <link rel="stylesheet" href="../icomoon/style.css"></head>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- personal CSS -->
     <link rel="stylesheet" href="../CSS/style.css">
+    <!-- personal js -->
     <script src="../JS/index.js"></script>
-    <script src="../JS/bootstrap.min.js"></script>
+    <!-- jquery -->
     <script src="../JS/jquery.js"></script>
+    <!-- swiper -->
+    <link rel="stylesheet" href="../swiper/swiper-bundle.css">
+    
 
 	
 </head>
@@ -25,10 +31,10 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#home">主页</a></li>
-            <li><a href="#about">关于</a></li>
-            <li><a href="#skills">技术</a></li>
-            <li><a href="#portfolio">作品集</a></li>
+            <li><a href="javascript:;" id="Home">主页</a></li>
+            <li><a href="javascript:;" id="About">关于</a></li>
+            <li><a href="javascript:;" id="Skills">技术</a></li>
+            <li><a href="javascript:;" id="Portfolio">作品集</a></li>
             <li><a href="../" style="color:skyblue">英/EN</a></li>
           </ul>
         </nav>
@@ -109,7 +115,7 @@
                     <span style="height: 100%;">
                         <h3>罗格斯大学</h3>
                         <i>计算机科学 本科</i>
-                        <div style="padding-top: 18px;">CGPA: 3.5/4.0 (自2022年)</div>
+                        <div style="padding-top: 18px;">CGPA: 3.5/4.0 (2022年)</div>
                         <div style="padding-top: 18px;">2020 - 2024</div>
                     </span>
                     
@@ -140,7 +146,7 @@
                             </div>
                             <div class="right">
                                 <h2>Java</h2>
-                                <p>自2019年以来，我就一直用Java来编程。截止2022年，我已经有4年代Java相关经验。我已经构建了许多带有或不带有GUI的Java应用程序。我还利用了JavaFX开发Songib等应用程序。</p>
+                                <p>自2019年以来，我就一直用Java来编程。截止2022年，我已经有4年代Java相关经验。我已经构建了许多带有或不带有GUI的Java应用程序。我还利用了JavaFX开发《Songib》，《Photos》等应用程序。</p>
                             </div>
                         </div>
                         <div class="skillbox">
@@ -151,7 +157,7 @@
                             </div>
                             <div class="right">
                                 <h2>C++</h2>
-                                <p>I have 1+ years of programming experience in C++; I have My C++ projects include employee management system, phone book app, and so much more.</p>
+                                <p>C++是我擅长的编程语言之一。我曾开发过的小程序就包括《简易职工管理系统》，《电话簿》，等等。</p>
                             </div>
                         </div>
                         <div class="skillbox">
@@ -162,7 +168,7 @@
                             </div>
                             <div class="right">
                                 <h2>C</h2>
-                                <p>我有两年以上的C语言编程经验。我熟练掌握Linux以及Mac开发系统以及C语言在其中的应用。我的Projects包括Word Wrapping Machine等。</p>
+                                <p>我有两年以上的C语言编程经验。我熟练掌握Linux以及Mac开发系统以及C语言在其中的应用。我的Projects包括《Word Wrapping Machine》等多线程程序。</p>
                             </div>
                         </div>
                     </div>
@@ -250,11 +256,92 @@
                     <h1>作品集</h1>
                     <p>以下只是部分我开发过的小程序以及写过的代码。想要获取更多关于我最新开发的小程序，欢迎访问我的GitHub！</p>
                 </div>
+                <div class="body">
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                        <div class="swiper-slide project-container">Slide 1</div>
+                        <div class="swiper-slide project-container">Slide 2</div>
+                        <div class="swiper-slide project-container">Slide 3</div>
+                        <div class="swiper-slide project-container">Slide 4</div>
+                        <div class="swiper-slide project-container">Slide 5</div>
+                        <div class="swiper-slide project-container">Slide 6</div>
+                        <div class="swiper-slide project-container">Slide 7</div>
+                        <div class="swiper-slide project-container">Slide 8</div>
+                        <div class="swiper-slide project-container">Slide 9</div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    
+                </div>
             </div>
         </section>
+        
+        <!-- animation for sliding -->
+        <script>
+            $("#Home").on("click",function(){
+                $("body,html").stop().animate({
+                    scrollTop:0
+                });
+            });
+            $("#About").on("click",function(){
+                $("body,html").stop().animate({
+                    scrollTop:$(".info").offset().top
+                });
+            });
+            $("#Skills").on("click",function(){
+                $("body,html").stop().animate({
+                    scrollTop:$(".skill").offset().top
+                });
+            });
+            $("#Portfolio").on("click",function(){
+                $("body,html").stop().animate({
+                    scrollTop:$(".portfolio").offset().top
+                });
+            });
+        </script>
+        <!-- animation for projects -->
+        <script src="../swiper/swiper-bundle.js"></script>
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            });
+        </script>
 	</main>
 	<footer>
+        <ul class="horizontal" style="float: left;">
+            <!-- shift+opt -->
+            <li>
+                <a href="https://github.com/zhengzihao2002" target="_blank" class="social">
+                    <span class="social_icons icon-github"></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/zhengzihao2002/" target="_blank" class="social">
+                    <span class="social_icons icon-linkedin"></span>
+                </a>
+            </li>
+            <li>
+                <a href="wechat.JPG" class="social" target="_blank">
+                    <span class="social_icons icon-wechat"></span>
+                </a>
+            </li>
+        </ul>
 		<!-- Footer section content goes here -->
+        <span style="float: right;">&copy; 2022 Zihao Zheng Portfolio. All Rights Reserved.</span>
 	</footer>
 </body>
 </html>

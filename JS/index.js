@@ -93,6 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
         navItems[index].classList.add('active');
         }
     });
+
+
+
+
+    
+    
+
 });
 
 });
