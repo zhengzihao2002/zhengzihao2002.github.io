@@ -65,5 +65,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
       
     window.addEventListener('resize', handleScreenResize);
+
+
+
+
+
+    // Auto underline of navigation bar
+    // Get the navigation items and sections
+    const navItems = document.querySelectorAll('nav ul li');
+    const sections = document.querySelectorAll('section');
+
+    // Add a scroll event listener to the window object
+    window.addEventListener('scroll', () => {
+    // Get the current position of the scroll
+    const scrollPosition = window.scrollY;
+
+    // Loop through the sections and check their positions
+    sections.forEach((section, index) => {
+        const sectionTop = section.getBoundingClientRect().top + scrollPosition;
+        const sectionBottom = section.getBoundingClientRect().bottom + scrollPosition;
+
+        // If the scroll position is within the section, highlight the corresponding nav item
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        navItems.forEach((item) => {
+            item.classList.remove('active');
+        });
+        navItems[index].classList.add('active');
+        }
+    });
+});
+
 });
 

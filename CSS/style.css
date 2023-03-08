@@ -168,7 +168,10 @@ nav>ul>li:last-child>a:hover::before{
 nav a:hover::before {
     width: 100%;
 }
-
+nav li.active a::before {
+    width: 100%;
+  }
+  
 /* section 1 */
 .intro {
     height: 100vh; /* Sets the height of the section to be 100% of the viewport height */
@@ -318,24 +321,29 @@ a.social:hover{
 .container{
     margin-left: 7%;margin-right: 7%;
 }
-.skill{
+.skill,.portfolio{
     color: #212529;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+    height: auto;
+    /* display: flex; */
+    /* justify-content: center; */
     /* align-items: center; */
 
-    margin-left: 7%;margin-right: 7%;
+    /* margin-left: 7%;margin-right: 7%; */
     border-bottom: solid lightgray 2px;
 
     overflow: hidden;
+    text-align: center;
 }
-.skill h1{
+.skill h1,.portfolio h1{
     font-size: 3rem;
     text-align: center;
     margin-bottom: 5px;
 }
-
+.skill>.container>.head{
+    text-align: center;
+    padding-left:10%;
+    padding-right:10%;
+}
 .resume{
     display: inline-block;
     background-color: #343a40;
@@ -349,7 +357,6 @@ a.social:hover{
     padding: 1.25rem 2.5rem;
 
     font-size: 18px;
-    transition: all 0.5s linear;
 }
 .resume:hover{
     background-color: rgb(98, 175, 33);
@@ -359,4 +366,88 @@ a.social:hover{
     text-align: center;
     width: 350px;
     margin-top: 30px;
+}
+@media screen and (min-width: 576px){
+    .col-sm-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+@media screen and (min-width: 992px){
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width: 33.3333333333%;
+    }
+} 
+
+.skillbox{
+    /* background: rgb(87, 149, 211); */
+    border-radius: 15px;
+    padding: 35px 25px;
+    top: 0;
+    transition: ease all 0.35s;
+    flex: 1;
+    margin-left: 10px;margin-right: 10px;
+
+    background-color: rgba(180, 204, 232, 0.5); /* Set a semi-transparent background color */
+    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+    opacity: 0.9; /* Set an opacity to make the element slightly transparent */
+
+    display: flex;
+    border: solid 1px rgba(180, 204, 232);
+    height: auto;
+}
+.skillbox:hover{
+    transform:translateY(-10px);
+}
+
+.body{
+    margin-top: 5%;
+}
+.skillbox>.left{
+    flex:2;
+}
+.skillbox>.right{
+    flex:8;
+    padding-left: 20px;
+}
+.skillbox>.right>h2{
+    /* display: inline-block; */
+    height: 50px;box-sizing: border-box;margin: 0;
+}
+.skillbox>.left>.icon{
+    /* margin-right: 20px; */
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    /* background-color: #fff; */
+    display: inline-flex;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    background: linear-gradient(to right, #12a9e9, #7186ed, #a04ff6);
+    color:white;
+
+    align-items: center;
+    justify-content: center;
+}
+.skillbox p{
+    font-size: 1rem;
+    margin-top: 0;margin-bottom: 0;
+}
+.skillbox>.left>.icon>span{
+    vertical-align: middle;
+}
+.row{
+    display: flex;
+    margin: 50px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.icon-java::before{
+    color:white;
+}
+.white::before{
+    color:white;
 }
