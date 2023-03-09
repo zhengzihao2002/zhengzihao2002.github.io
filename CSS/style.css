@@ -181,7 +181,7 @@ nav li.active a::before {
     margin-left: 7%;margin-right: 7%;
     border-bottom: solid lightgray 2px;
 
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .intro-image {
@@ -217,7 +217,7 @@ nav li.active a::before {
     margin-left: 7%;margin-right: 7%;
     border-bottom: solid lightgray 2px;
 
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .intro-text p {
     font-size: 1.2rem;
@@ -269,7 +269,7 @@ ul.horizontal>li{
 
 }
 
-a:visited {
+a:visited ,a{
     text-decoration: none;
     outline: none;
     color: inherit;
@@ -333,7 +333,7 @@ a.social:hover{
     /* margin-left: 7%;margin-right: 7%; */
     border-bottom: solid lightgray 2px;
 
-    overflow: hidden;
+    /* overflow: hidden; */
     text-align: center;
 }
 .skill h1,.portfolio h1{
@@ -468,24 +468,44 @@ a.social:hover{
     border-radius: 5%;
 }
 .project-container{
-    transition: all .5s linear;
+    transition: all .2s linear;
 }
 .project-container:hover{
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
+.project-container a{
+    width: 100%;height: 100%;
+    position: relative;
+}
+.project-container .proj-img{
+    height: 70%;
+    /* background-color: white; */
+    /* background-size:contain; */
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+.project-container .proj-exp{
+    height: 30%;
+    /* background-color: black; */
+}
+
+
 
 /* SWIPER CSS */
 .swiper {
 /* width: 100%;
 height: 100%; */
     width: 1000px;
-    height: 500px;
-    border-radius: 5%;
+    height: 600px;
+    /* border-radius: 4%; */
+    border-radius: 50px;
 }
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: rgba(114, 252, 160, 0.287);
+    /* background: rgba(114, 252, 160, 0.287); */
+    background-color: #2125296e;
 
     /* Center slide text vertically */
     display: -webkit-box;
@@ -549,4 +569,13 @@ footer>ul.horizontal{
     margin: 0;
     margin-top: 0;
     width: auto;
+}
+section{
+    overflow: auto;
+    /* overflow: hidden; */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+section::-webkit-scrollbar{
+    display: none;
 }
