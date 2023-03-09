@@ -78,11 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add a scroll event listener to the window object
     window.addEventListener('scroll', () => {
     // Get the current position of the scroll
-    const scrollPosition = window.scrollY;
+    let scrollPosition = window.scrollY;
 
     // Loop through the sections and check their positions
     sections.forEach((section, index) => {
-        const sectionTop = section.getBoundingClientRect().top + scrollPosition;
+        // 60 is the header height
+        let sectionTop = section.getBoundingClientRect().top + scrollPosition - 60;
+        if(index==0){
+            let sectionTop = 0;
+        }
         const sectionBottom = section.getBoundingClientRect().bottom + scrollPosition;
 
         // If the scroll position is within the section, highlight the corresponding nav item
