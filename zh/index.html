@@ -379,8 +379,8 @@
             </div>
         </section>
 
-        <!-- animation for navigation bar -->
-        <script>
+         <!-- animation for navigation bar -->
+         <script>
             $("#Home").on("click",function(){
                 $("body,html").stop().animate({
                     scrollTop:0
@@ -388,17 +388,17 @@
             });
             $("#About").on("click",function(){
                 $("body,html").stop().animate({
-                    scrollTop:$(".info").offset().top
+                    scrollTop:$(".info").offset().top-60
                 });
             });
             $("#Skills").on("click",function(){
                 $("body,html").stop().animate({
-                    scrollTop:$(".skill").offset().top
+                    scrollTop:$(".skill").offset().top-60
                 });
             });
             $("#Portfolio").on("click",function(){
                 $("body,html").stop().animate({
-                    scrollTop:$(".portfolio").offset().top+3
+                    scrollTop:$(".portfolio").offset().top-60
                 });
             });
             $("#Contact").on("click",function(){
