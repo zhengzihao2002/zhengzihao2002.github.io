@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?w9ibri');
-  src:  url('fonts/icomoon.eot?w9ibri#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?w9ibri') format('truetype'),
-    url('fonts/icomoon.woff?w9ibri') format('woff'),
-    url('fonts/icomoon.svg?w9ibri#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?3m7mjx');
+  src:  url('fonts/icomoon.eot?3m7mjx#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?3m7mjx') format('truetype'),
+    url('fonts/icomoon.woff?3m7mjx') format('woff'),
+    url('fonts/icomoon.svg?3m7mjx#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -73,29 +73,6 @@
 .icon-weixin:before {
   content: "\e902";
 }
-.icon-airplayvideo:before {
-  content: "\e904";
-}
-.icon-baidu1:before {
-  content: "\e905";
-  color: #2319dc;
-}
-.icon-c:before {
-  content: "\e90b";
-  color: #a8b9cc;
-}
-.icon-css3:before {
-  content: "\e90c";
-  color: #1572b6;
-}
-.icon-html5:before {
-  content: "\e90d";
-  color: #e34f26;
-}
-.icon-huawei:before {
-  content: "\e927";
-  color: #f00;
-}
 .icon-baidu:before {
   content: "\e910";
   color: #2319dc;
@@ -117,6 +94,10 @@
 .icon-css3:before {
   content: "\e90c";
   color: #1572b6;
+}
+.icon-gmail:before {
+  content: "\e917";
+  color: #d14836;
 }
 .icon-html5:before {
   content: "\e90d";
@@ -228,6 +209,9 @@
 }
 .icon-coin-yen:before {
   content: "\e93e";
+}
+.icon-envelop:before {
+  content: "\e945";
 }
 .icon-spinner11:before {
   content: "\e984";

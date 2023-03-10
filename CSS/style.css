@@ -209,7 +209,7 @@ nav li.active a::before {
 
 /* section2 */
 .info{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -321,7 +321,7 @@ a.social:hover{
 .container{
     margin-left: 7%;margin-right: 7%;
 }
-.skill,.portfolio,.contact{
+.skill,.portfolio{
     /* padding-top: 35px; */
     color: #212529;
     height: auto;
@@ -333,7 +333,7 @@ a.social:hover{
     /* margin-left: 7%;margin-right: 7%; */
     border-bottom: solid lightgray 2px;
 
-    /* overflow: hidden; */
+    overflow: hidden;
     text-align: center;
 }
 .skill h1,.portfolio h1,.contact h1{
@@ -484,6 +484,8 @@ a.social:hover{
 .portfolio .body{
     text-align: center;
     position: relative;
+    margin: 0;padding: 0;
+    margin-top: 30px;
 }
 .project{
     display: inline-block;
@@ -512,6 +514,7 @@ a.social:hover{
 }
 .project-container .proj-exp{
     height: 30%;
+    margin-bottom: 15px;
     /* background-color: black; */
 }
 
@@ -519,12 +522,14 @@ a.social:hover{
 
 /* SWIPER CSS */
 .swiper {
-/* width: 100%;
-height: 100%; */
-    width: 1000px;
-    height: 600px;
+width: 85.7%;
+/* height: 100%; */
+height: 610px;
+    /* width: 1200px;
+    height: 610px; */
     /* border-radius: 4%; */
     border-radius: 50px;border: 1px solid #212529;
+    /* margin-bottom: 30px; */
 }
 .swiper-slide {
     text-align: center;
@@ -597,11 +602,45 @@ footer>ul.horizontal{
     width: auto;
 }
 section{
-    overflow: auto;
+    /* overflow: auto; */
     /* overflow: hidden; */
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 section::-webkit-scrollbar{
     display: none;
+}
+.contact{
+    color: #212529;
+    height: auto;
+    
+
+    border-bottom: solid lightgray 2px;
+
+    text-align: center;
+}
+.contact .body{
+    height: 25vh;
+}
+.contact .horizontal{
+    width: 100%;
+    
+}
+.contact .horizontal li a{
+    border-radius: 10px;
+    width: auto;
+    padding: 20px;
+}
+.contact .horizontal li{
+    transition: all .2s linear;
+    margin-left:10px ;
+    margin-right: 10px;
+    margin-bottom: 30px;
+}
+.contact .horizontal li:hover{
+    transform: scale(1.1);
+}
+.contact-type{
+    font-weight:bold ;
+    font-size: 1.25rem;
 }

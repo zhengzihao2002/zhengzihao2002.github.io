@@ -79,22 +79,30 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
     // Get the current position of the scroll
     let scrollPosition = window.scrollY;
+    var maxY = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.body.clientHeight,
+        document.documentElement.clientHeight
+    ) - window.innerHeight;
 
     // Loop through the sections and check their positions
     sections.forEach((section, index) => {
         // 60 is the header height
         let sectionTop = section.getBoundingClientRect().top + scrollPosition - 60;
         if(index==0){
-            let sectionTop = 0;
+            sectionTop = 0;
         }
         const sectionBottom = section.getBoundingClientRect().bottom + scrollPosition;
 
         // If the scroll position is within the section, highlight the corresponding nav item
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        navItems.forEach((item) => {
-            item.classList.remove('active');
-        });
-        navItems[index].classList.add('active');
+            navItems.forEach((item) => {
+                item.classList.remove('active');
+            });
+            navItems[index].classList.add('active');
         }
     });
 
