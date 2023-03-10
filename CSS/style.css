@@ -654,3 +654,9 @@ section::-webkit-scrollbar{
     font-weight:bold ;
     font-size: 1.25rem;
 }
+.swiper h4{
+    margin:5px 0;
+}
+.swiper p{
+    margin-left: 5px;margin-right: 5px;
+}
