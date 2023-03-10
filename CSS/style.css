@@ -227,8 +227,11 @@ nav li.active a::before {
     /* width: 30%; */
     flex: 3;
     box-sizing: border-box;
-    margin-left: 5%;
-    margin-top: 5%;
+    margin: 5%;
+    
+    display: flex;
+    /* justify-content: center; horizontally center the content */
+    align-items:center; /* vertically center the content */
 }
 .info-image img{
     width: 350px;
