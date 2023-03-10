@@ -468,9 +468,11 @@ a.social:hover{
 }
 .row{
     display: flex;
-    margin: 50px;
+    /* margin: 50px; */
+    margin: 50px 0;
     flex-wrap: wrap;
     align-items: flex-start;
+    width: 100%;
 }
 .column{
 
@@ -606,6 +608,8 @@ section{
     /* overflow: hidden; */
     -ms-overflow-style: none;
     scrollbar-width: none;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 section::-webkit-scrollbar{
     display: none;
