@@ -188,6 +188,7 @@ nav li.active a::before {
     box-sizing: border-box;
     /* width: 40%; */
     flex: 4;
+    text-align:center;
 }
 
 .intro-image img {
