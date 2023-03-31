@@ -77,42 +77,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add a scroll event listener to the window object
     window.addEventListener('scroll', () => {
-    // Get the current position of the scroll
-    let scrollPosition = window.scrollY;
-    var maxY = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight,
-        document.body.clientHeight,
-        document.documentElement.clientHeight
-    ) - window.innerHeight;
+        // Get the current position of the scroll
+        let scrollPosition = window.scrollY;
+        var maxY = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.offsetHeight,
+            document.body.clientHeight,
+            document.documentElement.clientHeight
+        ) - window.innerHeight;
 
-    // Loop through the sections and check their positions
-    sections.forEach((section, index) => {
-        // 60 is the header height
-        let sectionTop = section.getBoundingClientRect().top + scrollPosition - 60;
-        if(index==0){
-            sectionTop = 0;
-        }
-        const sectionBottom = section.getBoundingClientRect().bottom + scrollPosition;
+        // Loop through the sections and check their positions
+        // Find the height of the document and the last section
+        const documentHeight = document.documentElement.scrollHeight;
+        const lastSection = sections[sections.length - 2];
+        const lastSectionBottom = lastSection.getBoundingClientRect().bottom + scrollPosition;
 
-        // If the scroll position is within the section, highlight the corresponding nav item
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        // If the scroll position is near the bottom of the document, highlight the last nav item
+        if (scrollPosition + window.innerHeight >= documentHeight - 1) {
             navItems.forEach((item) => {
                 item.classList.remove('active');
             });
-            navItems[index].classList.add('active');
+            navItems[navItems.length - 2].classList.add('active');
         }
-    });
+        // Otherwise, check if the scroll position is within any of the sections
+        else {
+            sections.forEach((section, index) => {
+                // 60 is the header height
+                let sectionTop = section.getBoundingClientRect().top + scrollPosition - 60;
+                if(index==0){
+                sectionTop = 0;
+                }
+                const sectionBottom = section.getBoundingClientRect().bottom + scrollPosition;
 
+                // If the scroll position is within the section, highlight the corresponding nav item
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                navItems.forEach((item) => {
+                    item.classList.remove('active');
+                });
+                navItems[index].classList.add('active');
+                }
+            });
+        }
 
+            });
 
-
-    
-    
-
-});
-
-});
+        });
 
