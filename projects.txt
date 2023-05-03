@@ -1,0 +1,47 @@
+Project Name: To Do List
+Project Tools: Java Script, HTML, CSS
+Project Description: A web-based reminder program offers a reliable and user-friendly solution for managing tasks and storing to-do lists
+Project Images: tdl.png
+Project Link: https://github.com/zhengzihao2002/ToDoList
+
+Project Name: Employee Management System
+Project Tools: C++
+Project Description: A CRUD-based program provides an efficient and secure way to manage employee records, allowing for easy adding, deleting, modifying, and storing of employee data.
+Project Images: ems.png
+Project Link: https://github.com/zhengzihao2002/Employee-Management-System
+
+Project Name: Phone Book
+Project Tools: C++
+Project Description: A phone book application enables efficient management of contact information for phone users, allowing for easy adding, deleting, modifying, and storing of phone numbers and associated data.
+Project Images: scs.png
+Project Link: https://github.com/zhengzihao2002/Simple-Contact-System" target="_blank
+
+Project Name: Word Wrapping Machine
+Project Tools: C
+Project Description: This word wrapping program provides a convenient solution for breaking down paragraphs into specified characters per line, enhancing readability and ensuring compatibility with various text formatting requirements.
+Project Images: ww.png
+Project Link: https://github.com/zhengzihao2002/CS214/tree/main/CS214/Word%20Wrapping
+
+Project Name: Songlib
+Project Tools: Java, JavaFX, FXML
+Project Description: A program for managing a music library, providing functionality for creating, reading, updating, and deleting songs with data persistence across sessions
+Project Images: songlib.png
+Project Link: https://github.com/zhengzihao2002/Songlib
+
+Project Name: Chess Game
+Project Tools: Java
+Project Description: A simple chess game that allows two player to play chess against each other.
+Project Images: chess.jpg
+Project Link: https://github.com/zhengzihao2002/Chess
+
+Project Name: Photos
+Project Tools: Java, JavaFX, FXML
+Project Description: A photo album application that allows users to store photos with rich functionalities
+Project Images: photos.png
+Project Link: https://github.com/zhengzihao2002/Photos
+
+Project Name: Android Photos
+Project Tools: Java, Android, XML
+Project Description: A photo album application that is capable to run on android phones.</
+Project Images: android1.png,android2.png,android3.png,android4.png
+Project Link: https://github.com/zhengzihao2002/Android_Photos
