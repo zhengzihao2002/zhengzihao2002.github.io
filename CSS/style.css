@@ -506,20 +506,23 @@ a.social:hover{
 .project-container,.swiper{
     transition: all .2s linear;
 }
-.project-container:hover,.swiper:hover{
-    transform: scale(1.01);
-}
-.project-container a{
-    width: 100%;height: 100%;
+
+.project-container{
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 .project-container .proj-img{
     height: 70%;
+    transition: all .2s linear;
     /* background-color: white; */
     /* background-size:contain; */
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
+}
+.proj-img:hover{
+    transform: scale(1.05);
 }
 .project-container .proj-exp{
     height: 30%;
@@ -531,10 +534,10 @@ a.social:hover{
 
 /* SWIPER CSS */
 .swiper {
-width:100%;
-height: 590px;
-    /* width: 1200px;
-    height: 610px; */
+    /* width: 85.7%; */
+    width: 100%;
+    height: 590px;
+
     /* border-radius: 4%; */
     border-radius: 50px;border: 1px solid #212529;
     /* margin-bottom: 30px; */
@@ -567,8 +570,8 @@ height: 100%;
 object-fit: cover;
 }
 .swiper {
-margin-left: auto;
-margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 .swiper-pagination span{
     transition: all .2s linear;
@@ -579,6 +582,7 @@ margin-right: auto;
 .swiper-button-next,.swiper-button-prev{
     transition: all .2s linear;
     background-color: #b1afaf6c;
+    padding: 10px;
     border-radius: 15%;
 }
 .swiper-button-next:hover,.swiper-button-prev:hover{
