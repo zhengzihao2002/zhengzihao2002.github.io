@@ -178,7 +178,8 @@ nav li.active a::before {
     display: flex; /* Uses flexbox to position image and text side-by-side */
     justify-content: center; /* Centers content horizontally */
     align-items: center; /*Centers content vertically */
-    margin-left: 7%;margin-right: 7%;
+    /* margin-left: 7%;margin-right: 7%; */
+    padding-left: 7%;padding-right: 7%;
     border-bottom: solid lightgray 2px;
 
     /* overflow: hidden; */
@@ -186,11 +187,19 @@ nav li.active a::before {
 
 .intro-image {
     box-sizing: border-box;
+    position: relative;
     /* width: 40%; */
     flex: 4;
     text-align: center;
-}
 
+    top: -100%; /* move the div off-screen to the left */
+    animation: slide-in 2s ease-out forwards; /* use the slide-in animation for 2 seconds */
+}
+@keyframes slide-in {
+    0% { top: -100%; } /* start at left edge of screen */
+    100% { top: 0; } /* end at its original position */
+  }
+  
 .intro-image img {
     width: 400px;
     border-radius: 25px;
