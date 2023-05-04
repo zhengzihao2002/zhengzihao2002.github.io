@@ -192,12 +192,22 @@ nav li.active a::before {
     flex: 4;
     text-align: center;
 
-    top: -100%; /* move the div off-screen to the left */
-    animation: slide-in 2s ease-out forwards; /* use the slide-in animation for 2 seconds */
+    left: -100%; /* move the div off-screen to the left */
+    animation: slide-in 2s ease-out forwards, wave 1.8s ease-in 2s forwards;
 }
+
 @keyframes slide-in {
-    0% { top: -100%; } /* start at left edge of screen */
-    100% { top: 0; } /* end at its original position */
+    0% { left: -100%; }
+    100% { left: 0; }
+  }
+  
+  @keyframes wave {
+    0% { transform: rotate(0); }
+    20% { transform: rotate(-10deg); }
+    40% { transform: rotate(10deg); }
+    60% { transform: rotate(-10deg); }
+    80% { transform: rotate(10deg); }
+    100% { transform: rotate(0); }
   }
   
 .intro-image img {
