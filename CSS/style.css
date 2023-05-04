@@ -189,7 +189,6 @@ nav li.active a::before {
     /* width: 40%; */
     flex: 4;
     text-align: center;
-    
 }
 
 .intro-image img {
