@@ -431,8 +431,16 @@ a.social:hover{
     border: solid 1px rgba(180, 204, 232);
     height: auto;
     height: 233px;box-sizing: border-box;
-    overflow: auto;
 }
+
+.skillbox>.right::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  
+  .skillbox>.right::-webkit-scrollbar-thumb {
+    background-color: rgba(180, 204, 232, 0.5);
+    border-radius: 30px;
+  }
 .skillbox:hover{
     transform:translateY(-10px);
 }
@@ -446,6 +454,7 @@ a.social:hover{
 .skillbox>.right{
     flex:8;
     padding-left: 20px;
+    overflow: auto;
 }
 .skillbox>.right>h2{
     /* display: inline-block; */
