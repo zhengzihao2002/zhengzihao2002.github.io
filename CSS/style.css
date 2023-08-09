@@ -430,6 +430,7 @@ a.social:hover{
     display: flex;
     border: solid 1px rgba(180, 204, 232);
     height: auto;
+    height: 233px;box-sizing: border-box;
 }
 .skillbox:hover{
     transform:translateY(-10px);
