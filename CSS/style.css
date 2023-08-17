@@ -640,6 +640,8 @@ footer{
     padding-left: 30px;
     padding-right: 30px;
     line-height: 60px;
+
+    text-align: center;
 }
 footer>ul.horizontal{
     margin: 0;
