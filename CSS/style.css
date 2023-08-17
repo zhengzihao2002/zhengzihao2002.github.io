@@ -172,9 +172,33 @@ nav li.active a::before {
     width: 100%;
   }
   
+
+@media (orientation: portrait) {
+    .info,.skill,.portfolio {
+        min-height: 0vh;
+    }
+    .intro{
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    body header nav{
+        display: none;
+    }
+    body header .logo{
+       width: 100%; 
+       text-align: center;
+    }
+}
+@media (orientation:landscape){
+    .info,.skill,.portfolio {
+        min-height: 100vh;
+    }
+    .intro{
+        height: 100vh; /* Sets the height of the section to be 100% of the viewport height */
+    }
+}
 /* section 1 */
 .intro {
-    height: 100vh; /* Sets the height of the section to be 100% of the viewport height */
     display: flex; /* Uses flexbox to position image and text side-by-side */
     justify-content: center; /* Centers content horizontally */
     align-items: center; /*Centers content vertically */
@@ -210,7 +234,6 @@ nav li.active a::before {
 
 /* section2 */
 .info{
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -331,7 +354,6 @@ a.social:hover{
     /* padding-top: 35px; */
     color: #212529;
     height: auto;
-    min-height: 100vh;
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: center; */
