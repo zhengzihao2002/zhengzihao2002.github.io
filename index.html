@@ -482,8 +482,7 @@
                 $("body,html").stop().animate({
                     scrollTop:$(".contact").offset().top+5
                 });
-            });
-        
+            });    
         </script>
         <!-- animation for portfolio -->
         <script src="./swiper/swiper-bundle.js"></script>
@@ -505,6 +504,100 @@
         </script>
 	</main>
 
+    <!-- mobile stuff -->
+    <button id="openModal" class="icon-menu"></button>
+    <div id="modalOverlay">
+        <div class="modContainer">
+            <p>Click here</p>
+            <p>to close</p>
+            <em class="icon-arrow-right2"></em>
+        </div>
+    </div>
+    <div id="modalContent">
+        <dl>
+            <dt>Navigation Bar</dt>
+            <dd style="margin: 0;">
+                <ol>
+                    <li id="Home_mobile">Home</li>
+                    <li id="About_mobile">About</li>
+                    <li id="Skills_mobile">Skills</li>
+                    <li id="Portfolio_mobile">Portfolio</li>
+                    <li id="Contact_mobile">Contact</li>
+                    <li><a href="zh/" style="color:red;font-weight:bolder;">Chinese Site</a></li>
+                </ol>
+            </dd>
+        </dl>
+    </div>
+    <script>
+        const openModalButton = document.getElementById('openModal');
+        const closeModalButton = document.getElementById('closeModal');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalContent = document.getElementById('modalContent');
+
+        openModalButton.addEventListener('click', () => {
+            modalOverlay.style.display = 'block';
+            modalContent.style.right = 0;
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+
+        modalOverlay.addEventListener('click', () => {
+            modalOverlay.style.display = 'none';
+            modalContent.style.right = "-60vw"
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        });
+        
+        $("#Home_mobile").on("click", function() {
+            $("body,html").stop().animate({
+                scrollTop: 0
+            }, function() {
+                // Code to execute after scrollTop animation
+                $("#modalOverlay").css("display", "none");
+                $("#modalContent").css("right", "-60vw");
+                $("body").css("overflow", "auto");
+            });
+        });
+        $("#About_mobile").on("click",function(){
+            $("body,html").stop().animate({
+                scrollTop:$(".info").offset().top-50
+            }, function() {
+                // Code to execute after scrollTop animation
+                $("#modalOverlay").css("display", "none");
+                $("#modalContent").css("right", "-60vw");
+                $("body").css("overflow", "auto");
+            });
+        });
+        $("#Skills_mobile").on("click",function(){
+            $("body,html").stop().animate({
+                scrollTop:$(".skill").offset().top-50
+            }, function() {
+                // Code to execute after scrollTop animation
+                $("#modalOverlay").css("display", "none");
+                $("#modalContent").css("right", "-60vw");
+                $("body").css("overflow", "auto");
+            });
+        });
+        $("#Portfolio_mobile").on("click",function(){
+            $("body,html").stop().animate({
+                scrollTop:$(".portfolio").offset().top-50
+            }, function() {
+                // Code to execute after scrollTop animation
+                $("#modalOverlay").css("display", "none");
+                $("#modalContent").css("right", "-60vw");
+                $("body").css("overflow", "auto");
+            });
+        });
+        $("#Contact_mobile").on("click",function(){
+            $("body,html").stop().animate({
+                scrollTop:$(".contact").offset().top+5
+            }, function() {
+                // Code to execute after scrollTop animation
+                $("#modalOverlay").css("display", "none");
+                $("#modalContent").css("right", "-60vw");
+                $("body").css("overflow", "auto");
+            });
+        });    
+    </script>
+    
 
 	<footer>
         <ul class="horizontal" style="float: left;">
@@ -530,7 +623,7 @@
         
 		<!-- Footer section content goes here -->
         <span style="float: right;">Copyright &copy; Zihao Zheng 2022. All Rights Reserved.</span>
-        <span style="padding-left: 150px;">Verison 1.3</span>
+        <span style="padding-left: 150px;">Verison 1.4</span>
 	</footer>
 </body>
 </html>

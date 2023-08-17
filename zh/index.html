@@ -56,14 +56,14 @@
               </h2>
               <h2 style="padding:0;margin:0;"><span style="background: linear-gradient(to right, #12c2e9, #7c4ff6, #f64f6b);-webkit-background-clip: text;
                 -webkit-text-fill-color: transparent; font-size: 30px;">一位来自罗格斯大学的CS学生！</span></h2>
-              <p>
+              <!-- <p>
                 我是罗格斯大学的计算机科学本科生，并将在2024年5月毕业。我对计算机科学的各个领域都很感兴趣，但最让我着迷的是人工智能和机器学习。同时，我也喜欢游戏开发。大学的四年，给我奠定了扎实的专业理论基础，良好的组织能力，团队协作精神，务实的工作作风还有良好的为人处世能力。
                 
                 我一直以来都是一个热心肠和积极进取的学生。我非常喜欢学习新的知识和技能，并且我乐于将它们应用于实际项目中。我掌握了多种编程语言，包括Java、Python和C++，并且我熟练使用各种开发工具和框架，例如Eclipse和Visual Studio。
 
                 我对计算机科学的热情使我成为一个不断创新和探索的人。每天我都在寻找新的项目和挑战，以锻炼我的技能和探索新的解决方案。我相信，只有通过实践和不断地探索，才能更好地理解计算机科学的各个领域，并将我的知识应用于实际问题的解决中。因此，我始终保持着高度的自我激励和创造力，以确保我在计算机科学领域的不断成长和进步。
 
-                在未来，我希望能够将自己的技能和知识应用于人工智能和机器学习领域，并为祖国的IT事业添砖加瓦！</p>
+                在未来，我希望能够将自己的技能和知识应用于人工智能和机器学习领域，并为祖国的IT事业添砖加瓦！</p> -->
             </div>
         </section>
 
@@ -492,6 +492,101 @@
             });
         </script>
 	</main>
+
+    <!-- mobile stuff -->
+    <button id="openModal" class="icon-menu"></button>
+    <div id="modalOverlay">
+        <div class="modContainer">
+            <p>Click here</p>
+            <p>to close</p>
+            <em class="icon-arrow-right2"></em>
+        </div>
+    </div>
+    <div id="modalContent">
+        <dl>
+            <dt>Navigation Bar</dt>
+            <dd style="margin: 0;">
+                <ol>
+                    <li id="Home_mobile">主页</li>
+                    <li id="About_mobile">关于</li>
+                    <li id="Skills_mobile">技术</li>
+                    <li id="Portfolio_mobile">作品集</li>
+                    <li id="Contact_mobile">联系</li>
+                    <li><a href="zh/" style="color:skyblue;font-weight:bolder;">英文网站</a></li>
+                </ol>
+            </dd>
+        </dl>
+    </div>
+    <script>
+        const openModalButton = document.getElementById('openModal');
+        const closeModalButton = document.getElementById('closeModal');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalContent = document.getElementById('modalContent');
+
+        openModalButton.addEventListener('click', () => {
+            modalOverlay.style.display = 'block';
+            modalContent.style.right = 0;
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+
+        modalOverlay.addEventListener('click', () => {
+            modalOverlay.style.display = 'none';
+            modalContent.style.right = "-60vw"
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        });
+        
+        $("#Home_mobile").on("click", function() {
+            $("body,html").stop().animate({
+                scrollTop: 0
+            }, function() {
+                // Code to execute after scrollTop animation
+                $("#modalOverlay").css("display", "none");
+                $("#modalContent").css("right", "-60vw");
+                $("body").css("overflow", "auto");
+            });
+        });
+        $("#About_mobile").on("click",function(){
+            $("body,html").stop().animate({
+                scrollTop:$(".info").offset().top-50
+            }, function() {
+                // Code to execute after scrollTop animation
+                $("#modalOverlay").css("display", "none");
+                $("#modalContent").css("right", "-60vw");
+                $("body").css("overflow", "auto");
+            });
+        });
+        $("#Skills_mobile").on("click",function(){
+            $("body,html").stop().animate({
+                scrollTop:$(".skill").offset().top-50
+            }, function() {
+                // Code to execute after scrollTop animation
+                $("#modalOverlay").css("display", "none");
+                $("#modalContent").css("right", "-60vw");
+                $("body").css("overflow", "auto");
+            });
+        });
+        $("#Portfolio_mobile").on("click",function(){
+            $("body,html").stop().animate({
+                scrollTop:$(".portfolio").offset().top-50
+            }, function() {
+                // Code to execute after scrollTop animation
+                $("#modalOverlay").css("display", "none");
+                $("#modalContent").css("right", "-60vw");
+                $("body").css("overflow", "auto");
+            });
+        });
+        $("#Contact_mobile").on("click",function(){
+            $("body,html").stop().animate({
+                scrollTop:$(".contact").offset().top+5
+            }, function() {
+                // Code to execute after scrollTop animation
+                $("#modalOverlay").css("display", "none");
+                $("#modalContent").css("right", "-60vw");
+                $("body").css("overflow", "auto");
+            });
+        });    
+    </script>
+
 	<footer>
         <ul class="horizontal" style="float: left;">
             <!-- shift+opt -->
@@ -513,7 +608,7 @@
         </ul>
 		<!-- Footer section content goes here -->
         <span style="float: right;">&copy; 2022 郑子豪 拥有所有版权.</span>
-        <span>Verison 1.3</span>
+        <span>Verison 1.4</span>
 	</footer>
 </body>
 </html>

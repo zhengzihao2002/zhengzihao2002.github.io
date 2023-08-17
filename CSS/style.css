@@ -196,6 +196,9 @@ nav li.active a::before {
     .intro{
         height: 100vh; /* Sets the height of the section to be 100% of the viewport height */
     }
+    #openModal{
+        display: none;
+    }
 }
 /* section 1 */
 .intro {
@@ -626,8 +629,89 @@ object-fit: cover;
 
 
 
+#openModal {
+    position: fixed;
+    bottom: 40rem; /* 1.23 / 100 * 16 */
+    right: 1rem; /* 0.17 / 100 * 16 */
+    width: 6rem; /* 0.41 / 100 * 16 */
+    height: 6rem; /* 0.41 / 100 * 16 */
+    font-size: 2.8rem; /* 0.13 / 100 * 16 */
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2000;
+}
+#modalOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    /* Ensure the overlay is above other content */
+}
+.modContainer{
+    padding-top:40vh;
+    height: 100vh;
+    width: 40vw;
+}
+#modalOverlay p{
+    margin: 0;padding: 0;
+    text-align: center;
+    display: block;
+    font-size: 50px;
+}
+#modalOverlay em{
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 75px;
+}
+#modalContent {
+    position: fixed;
+    height: 100vh;
+    width: 60vw;
+    background-color: #fff;
+    z-index: 1001;
+    /* Ensure the modal is above the overlay */
+    color:black;
+    top: 0;
+    right: -60vw;
+    transition: right 0.12s ease;
+}
+#modalContent ol{
+    list-style:none;
+}
+#modalContent dt{
+    width:100%;
+    color: #333;
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 10px;
 
-
+    font-weight: 700;
+    border-bottom: 1px solid #f1f1f1;
+}
+#modalContent dd{
+    margin: 0;
+    font-size: 2.2rem;
+}
+#modalContent li{
+    padding-left: 1.5rem;
+    height: 8rem;
+    line-height: 8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    color: #666;
+}
 
 
 footer{
