@@ -631,11 +631,11 @@ object-fit: cover;
 
 #openModal {
     position: fixed;
-    bottom: 40rem; /* 1.23 / 100 * 16 */
-    right: 1rem; /* 0.17 / 100 * 16 */
-    width: 6rem; /* 0.41 / 100 * 16 */
-    height: 6rem; /* 0.41 / 100 * 16 */
-    font-size: 2.8rem; /* 0.13 / 100 * 16 */
+    bottom: 20rem;
+    right: 1rem; 
+    width: 6rem; 
+    height: 6rem; 
+    font-size: 2.8rem; 
     padding: 0;
     margin: 0;
     border: none;

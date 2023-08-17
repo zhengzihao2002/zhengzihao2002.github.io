@@ -512,7 +512,7 @@
                     <li id="Skills_mobile">技术</li>
                     <li id="Portfolio_mobile">作品集</li>
                     <li id="Contact_mobile">联系</li>
-                    <li><a href="zh/" style="color:skyblue;font-weight:bolder;">英文网站</a></li>
+                    <li><a href="../" style="color:skyblue;font-weight:bolder;">英文网站</a></li>
                 </ol>
             </dd>
         </dl>
@@ -536,55 +536,65 @@
         });
         
         $("#Home_mobile").on("click", function() {
+            // Code to execute before scrollTop animation
+            $("#modalOverlay").css("display", "none");
+            $("#modalContent").css("right", "-60vw");
+            $("body").css("overflow", "auto");
+
+            // Scroll animation
             $("body,html").stop().animate({
                 scrollTop: 0
-            }, function() {
-                // Code to execute after scrollTop animation
-                $("#modalOverlay").css("display", "none");
-                $("#modalContent").css("right", "-60vw");
-                $("body").css("overflow", "auto");
             });
         });
-        $("#About_mobile").on("click",function(){
+
+        $("#About_mobile").on("click", function() {
+            // Code to execute before scrollTop animation
+            $("#modalOverlay").css("display", "none");
+            $("#modalContent").css("right", "-60vw");
+            $("body").css("overflow", "auto");
+
+            // Scroll animation
             $("body,html").stop().animate({
-                scrollTop:$(".info").offset().top-50
-            }, function() {
-                // Code to execute after scrollTop animation
-                $("#modalOverlay").css("display", "none");
-                $("#modalContent").css("right", "-60vw");
-                $("body").css("overflow", "auto");
+                scrollTop: $(".info").offset().top - 50
             });
         });
-        $("#Skills_mobile").on("click",function(){
+
+        $("#Skills_mobile").on("click", function() {
+            // Code to execute before scrollTop animation
+            $("#modalOverlay").css("display", "none");
+            $("#modalContent").css("right", "-60vw");
+            $("body").css("overflow", "auto");
+
+            // Scroll animation
             $("body,html").stop().animate({
-                scrollTop:$(".skill").offset().top-50
-            }, function() {
-                // Code to execute after scrollTop animation
-                $("#modalOverlay").css("display", "none");
-                $("#modalContent").css("right", "-60vw");
-                $("body").css("overflow", "auto");
+                scrollTop: $(".skill").offset().top - 50
             });
         });
-        $("#Portfolio_mobile").on("click",function(){
+
+        $("#Portfolio_mobile").on("click", function() {
+            // Code to execute before scrollTop animation
+            $("#modalOverlay").css("display", "none");
+            $("#modalContent").css("right", "-60vw");
+            $("body").css("overflow", "auto");
+
+            // Scroll animation
             $("body,html").stop().animate({
-                scrollTop:$(".portfolio").offset().top-50
-            }, function() {
-                // Code to execute after scrollTop animation
-                $("#modalOverlay").css("display", "none");
-                $("#modalContent").css("right", "-60vw");
-                $("body").css("overflow", "auto");
+                scrollTop: $(".portfolio").offset().top - 50
             });
         });
-        $("#Contact_mobile").on("click",function(){
+
+        $("#Contact_mobile").on("click", function() {
+            // Code to execute before scrollTop animation
+            $("#modalOverlay").css("display", "none");
+            $("#modalContent").css("right", "-60vw");
+            $("body").css("overflow", "auto");
+
+            // Scroll animation
             $("body,html").stop().animate({
-                scrollTop:$(".contact").offset().top+5
-            }, function() {
-                // Code to execute after scrollTop animation
-                $("#modalOverlay").css("display", "none");
-                $("#modalContent").css("right", "-60vw");
-                $("body").css("overflow", "auto");
+                scrollTop: $(".contact").offset().top + 5
             });
-        });    
+        });
+
     </script>
 
 	<footer>
