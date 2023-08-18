@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="swiper/swiper-bundle.css">
     <!-- Google effects -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald&effect=anaglyph">
+    <script type="text/javascript" src="JS/swiper.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="JS/anime.min.js" charset="utf-8"></script>
+    <link href="CSS/swiper.min.css" rel="stylesheet" />
+    <link href="CSS/colormad.css" rel="stylesheet" />
 
 
 
@@ -403,8 +407,34 @@
                     
                 </div>
             </div>
+            <script>
+                let autoClickInterval;
+
+                function startAutoClick() {
+                    autoClickInterval = setInterval(function() {
+                        if (!$(".portfolio > .container > .body").is(":hover")) {
+                            $(".swiper-button-next").click();
+                        }
+                    }, 4000);
+                }
+
+                function stopAutoClick() {
+                    clearInterval(autoClickInterval);
+                }
+
+                $(document).ready(function() {
+                    startAutoClick();
+                    
+                    $(".portfolio > .container > .body").hover(function() {
+                        stopAutoClick();
+                    }, function() {
+                        startAutoClick();
+                    });
+                });
+            </script>
         </section>
 
+        
         <!-- section5 - Contact -->
         <section class="contact">
             <div class="container">
