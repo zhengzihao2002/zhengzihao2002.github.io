@@ -712,7 +712,18 @@ object-fit: cover;
     position: relative;
     color: #666;
 }
+#feedback {
+    font-weight: bold;
+    margin-top: 10px;
+}
 
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
 
 footer{
     height: 60px;

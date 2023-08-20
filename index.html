@@ -554,10 +554,114 @@
                     <li id="Portfolio_mobile">Portfolio</li>
                     <li id="Contact_mobile">Contact</li>
                     <li><a href="zh/" style="color:red;font-weight:bolder;">Chinese Site</a></li>
+                    <li id="NONONO">Secret Hideout (Don't click me)</li>
                 </ol>
             </dd>
         </dl>
     </div>
+    <div id="secretBox" style="
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 70%;
+        background-color: #ffffff;
+        border: 1px solid #000000;
+        text-align: center;
+        padding: 20px;
+        z-index: 3000;
+        display: none;
+    ">
+        <p style="height: 100px;width: 300px;">Select an option:</p>
+        <select style="height: 100px;width: 300px;font-size: 20px;" id="optionSelect">
+            <option value="birthday">Check Zihao's Crush's Birthday</option>
+            <option value="name">Check Zihao's Crush's Name</option>
+        </select>
+    
+        <input style="height: 100px;width: 300px;font-size: 20px" type="text" id="textInput" placeholder="MMDDYYYY">
+        <p id="tip" style="color: gray;font-size: 50px;"></p>
+        <button style="height: 100px;width: 300px;font-size: 40px" onclick="check()">Check</button>
+    
+        <p id="feedback"></p>
+        <button style="height: 100px;width: 300px;font-size: 40px" id="closeSecret">EXIT</button>
+    </div>
+    <script>
+        let closeSecret = document.getElementById('closeSecret');
+        let secretBox = document.getElementById('secretBox');
+        closeSecret.addEventListener('click', function() {
+            secretBox.style.display = "none";
+        });
+
+        const optionSelect = document.getElementById('optionSelect');
+        const inputBox = document.getElementById('textInput');
+        let tipBox = document.getElementById('tip');
+        let feedback = document.getElementById('feedback');
+
+
+        optionSelect.addEventListener('change', async function () {
+            feedback.textContent = "";
+            const selectedOption = optionSelect.value;
+            if (selectedOption === 'birthday') {
+                inputBox.setAttribute('placeholder', 'MMDDYYYY');
+                tipBox.textContent ="";
+            } else if (selectedOption === 'name') {
+                inputBox.setAttribute('placeholder', '');
+                tipBox.textContent = "Format: two words with space in between, first letter of each word upper case"
+            }
+        });
+
+        async function check() {
+            const selectedOption = document.getElementById('optionSelect').value;
+            if (selectedOption === 'birthday') {
+                await checkBirthday();
+            } else if (selectedOption === 'name') {
+                await checkName();
+            }
+        }
+
+        async function checkBirthday() {
+            const expectedHash = "35f884ac7836a17749aec378b1d47328a37f561c2df0094a231b2e28542777a5";
+            const birthday = document.getElementById('textInput').value;
+            const hashedBirthday = await hashUsingWebCrypto(birthday);
+
+            const feedbackElement = document.getElementById('feedback');
+            if (hashedBirthday === expectedHash) {
+                feedbackElement.innerText = "You are correct!";
+                feedbackElement.classList.remove('incorrect');
+                feedbackElement.classList.add('correct');
+            } else {
+                feedbackElement.innerText = "You are wrong. Try again.";
+                feedbackElement.classList.remove('correct');
+                feedbackElement.classList.add('incorrect');
+            }
+        }
+        async function checkName() {
+            const expectedHash = "bb6f4d1a4ddad892c1dd1c035ab08291c34fea3ead211242842c0a420553a4ae";
+            const name = document.getElementById('textInput').value;
+            const hashedName = await hashUsingWebCrypto(name);
+
+            const feedbackElement = document.getElementById('feedback');
+            if (hashedName === expectedHash) {
+                feedbackElement.innerText = "You are correct!";
+                feedbackElement.classList.remove('incorrect');
+                feedbackElement.classList.add('correct');
+            } else {
+                feedbackElement.innerText = "You are wrong. Better luck next time.";
+                feedbackElement.classList.remove('correct');
+                feedbackElement.classList.add('incorrect');
+            }
+        }
+        async function hashUsingWebCrypto(data) {
+            const encoder = new TextEncoder();
+            const encodedData = encoder.encode(data);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', encodedData);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashedData = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+            return hashedData;
+        }
+    </script>
+
     <script>
         const openModalButton = document.getElementById('openModal');
         const closeModalButton = document.getElementById('closeModal');
@@ -634,6 +738,10 @@
             $("body,html").stop().animate({
                 scrollTop: $(".contact").offset().top + 5
             });
+        });
+
+        $("#NONONO").on("click",function(){
+            $("#secretBox").css("display","block")
         });
 
     </script>
