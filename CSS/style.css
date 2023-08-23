@@ -628,7 +628,7 @@ object-fit: cover;
 }
 
 
-
+/* mobile stuff */
 #openModal {
     position: fixed;
     bottom: 20rem;
@@ -724,6 +724,38 @@ object-fit: cover;
 .incorrect {
     color: red;
 }
+#secretBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 5%;
+    z-index: 3000;
+    display: none;
+    overflow: auto;
+    box-sizing: border-box;
+}
+#secretBox p#disclaimer{
+    width: 100%;
+    display: block;
+    color: gray;
+    font-size: 18px;
+    position: relative;
+    /* bottom: 0; */
+    margin-top: 30px;
+    
+    
+}
+
+
+
+
+
+
 
 footer{
     height: 60px;

@@ -559,33 +559,28 @@
             </dd>
         </dl>
     </div>
-    <div id="secretBox" style="
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 70%;
-        height: 70%;
-        background-color: #ffffff;
-        border: 1px solid #000000;
-        text-align: center;
-        padding: 20px;
-        z-index: 3000;
-        display: none;
-    ">
+    <div id="secretBox">
+        <!-- title -->
         <p style="height: 100px;width: 100%;color: #000000;font-size: 35px;">Zihao can't directly tell you his secrets, but if you know it, you can verify it here!</p>
+
+        <!-- options and input -->
         <select style="height: 100px;width: 300px;font-size: 20px;" id="optionSelect">
             <option value="birthday">Check Zihao's Crush's Birthday</option>
             <option value="name">Check Zihao's Crush's Name</option>
         </select>
-    
         <input style="height: 100px;width: 300px;font-size: 20px" type="text" id="textInput" placeholder="MMDDYYYY">
         <p id="tip" style="color: gray;font-size: 50px;"></p>
         <button style="height: 100px;width: 300px;font-size: 40px" onclick="check()">Check</button>
-    
+        
+        <!-- feedback -->
         <p id="feedback"></p>
+        
+
+        <!-- exit button -->
         <button style="height: 100px;width: 300px;font-size: 40px" id="closeSecret">EXIT</button>
-        <p style="height: 100px;width: 100%;color: gray;font-size: 28px;">This is only a BETA version feature which is still under testing. May occasionally produce false data. Using this feature automatically means you acknowledge this information.</p>
+
+        <!-- disclaimer -->
+        <p id="disclaimer"><i style="color: red;">Disclaimer</i>: This is only a BETA version feature which is still under testing. MAY occasionally produce incorrect data (although NEVER happened before). Using this feature automatically means you acknowledge this information.</p>
     </div>
     <script>
         let closeSecret = document.getElementById('closeSecret');
