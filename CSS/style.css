@@ -644,6 +644,9 @@ object-fit: cover;
     cursor: pointer;
     border-radius: 50%;
     z-index: 2000;
+
+    animation: rotate 4s linear infinite; /* Adjust animation duration as needed */
+    transition: transform 0.2s; /* Smooth transition when pausing */
 }
 #modalOverlay {
     display: none;
@@ -748,11 +751,16 @@ object-fit: cover;
     position: relative;
     /* bottom: 0; */
     margin-top: 30px;
-    
-    
 }
 
-
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
 
 

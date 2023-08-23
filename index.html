@@ -565,19 +565,30 @@
                     <li id="exo1" style="word-break: break-word; white-space: normal;overflow: visible;line-height: 1.2;">
                         Baby, Don't Cry (인어의 눈물)  - EXO(엑소)
                         <script>
+                            
                             const audioControl = document.getElementById('exo1');
+                            const openModal = document.getElementById('openModal');
                             const audio = new Audio('music/Baby, Don\'t Cry (인어의 눈물)  - EXO(엑소).mp3');
                             let isPlaying = false;
+                            openModal.style.animationPlayState = 'paused';
                         
                             audioControl.addEventListener('click', () => {
-                              if (isPlaying) {
+                            if (isPlaying) {
                                 audio.pause();
-                                audioControl.style.color = "#666666"
-                              } else {
+                                audioControl.style.color = "#666666";
+                                openModal.style.animationPlayState = 'paused';
+                            } else {
                                 audio.play();
-                                audioControl.style.color = "green"
-                              }
-                              isPlaying = !isPlaying;
+                                audioControl.style.color = "green";
+                                openModal.style.animationPlayState = 'running';
+                            }
+                            isPlaying = !isPlaying;
+                            });
+
+                            audio.addEventListener("ended",()=>{
+                                audioControl.style.color = "#666666";
+                                openModal.animationPlayState = "paused";
+                                isPlaying = false;
                             });
                           </script>
                     </li>
