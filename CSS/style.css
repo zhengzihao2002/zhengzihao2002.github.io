@@ -715,6 +715,7 @@ object-fit: cover;
 #feedback {
     font-weight: bold;
     margin-top: 10px;
+    font-size: 45px;
 }
 
 .correct {
@@ -743,7 +744,7 @@ object-fit: cover;
     width: 100%;
     display: block;
     color: gray;
-    font-size: 18px;
+    font-size: 25px;
     position: relative;
     /* bottom: 0; */
     margin-top: 30px;
