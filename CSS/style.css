@@ -645,7 +645,6 @@ object-fit: cover;
     border-radius: 50%;
     z-index: 2000;
 
-    animation: rotate 4s linear infinite; /* Adjust animation duration as needed */
     transition: transform 0.2s; /* Smooth transition when pausing */
 }
 #modalOverlay {

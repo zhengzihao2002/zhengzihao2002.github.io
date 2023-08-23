@@ -570,24 +570,28 @@
                             const openModal = document.getElementById('openModal');
                             const audio = new Audio('music/Baby, Don\'t Cry (인어의 눈물)  - EXO(엑소).mp3');
                             let isPlaying = false;
-                            openModal.style.animationPlayState = 'paused';
+                            let isRotating = false;
                         
                             audioControl.addEventListener('click', () => {
                             if (isPlaying) {
                                 audio.pause();
                                 audioControl.style.color = "#666666";
-                                openModal.style.animationPlayState = 'paused';
+                                openModal.style.animation = 'none';
                             } else {
                                 audio.play();
                                 audioControl.style.color = "green";
                                 openModal.style.animationPlayState = 'running';
+                                if (!isRotating) {
+                                    openModal.style.animation = 'rotate 4s linear infinite'; // Apply animation
+                                    isRotating = true;
+                                }
                             }
                             isPlaying = !isPlaying;
                             });
 
                             audio.addEventListener("ended",()=>{
                                 audioControl.style.color = "#666666";
-                                openModal.animationPlayState = "paused";
+                                openModal.style.animation = 'none';
                                 isPlaying = false;
                             });
                           </script>
@@ -602,10 +606,10 @@
 
         <!-- options and input -->
         <select style="height: 100px;width: 350px;font-size: 20px;" id="optionSelect">
-            <option value="birthday">Check Zihao's Crush's Birthday</option>
             <option value="name">Check Zihao's Crush's Name</option>
+            <option value="birthday">Check Zihao's Crush's Birthday</option>
         </select>
-        <input style="height: 100px;width: 350px;font-size: 20px" type="text" id="textInput" placeholder="MMDDYYYY">
+        <input style="height: 100px;width: 350px;font-size: 20px" type="text" id="textInput" placeholder="">
         <p id="tip" style="color: gray;font-size: 50px;"></p>
         <button style="height: 100px;width: 300px;font-size: 40px" onclick="check()">Check</button>
         
@@ -630,6 +634,8 @@
         const inputBox = document.getElementById('textInput');
         let tipBox = document.getElementById('tip');
         let feedback = document.getElementById('feedback');
+
+        tipBox.textContent = "Format: two words with space in between, first letter of each word upper case"
 
 
         optionSelect.addEventListener('change', async function () {
