@@ -696,7 +696,7 @@ object-fit: cover;
     padding: 10px;
 
     font-weight: 700;
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 3px solid #e4e4e4;
 }
 #modalContent dd{
     margin: 0;
@@ -751,6 +751,7 @@ object-fit: cover;
     
     
 }
+
 
 
 
