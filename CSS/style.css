@@ -686,6 +686,7 @@ object-fit: cover;
     top: 0;
     right: -60vw;
     transition: right 0.12s ease;
+    overflow: auto;
 }
 #modalContent ol{
     list-style:none;
