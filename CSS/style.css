@@ -92,7 +92,11 @@ header{
     z-index: 5;
 }
 
-
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 .logo {
     font-family: 'Brush Script','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -188,6 +192,11 @@ nav li.active a::before {
        width: 100%; 
        text-align: center;
     }
+    .contact .body{
+        display: block;
+        height: fit-content;
+        margin-bottom: 5vh;
+    }
 }
 @media (orientation:landscape){
     .info,.skill,.portfolio {
@@ -198,6 +207,9 @@ nav li.active a::before {
     }
     #openModal{
         display: none;
+    }
+    .contact .body{
+        height: 25vh;
     }
 }
 /* section 1 */
@@ -786,6 +798,7 @@ footer{
     line-height: 60px;
 
     text-align: center;
+    overflow: hidden;
 }
 footer>ul.horizontal{
     margin: 0;
@@ -813,7 +826,7 @@ section::-webkit-scrollbar{
     text-align: center;
 }
 .contact .body{
-    height: 25vh;
+    /* height: 25vh; */
 }
 .contact .horizontal{
     width: 100%;
