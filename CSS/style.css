@@ -178,8 +178,8 @@ nav li.active a::before {
         min-height: 0vh;
     }
     .intro{
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 200px;
+        padding-bottom: 200px;
     }
     body header nav{
         display: none;
@@ -646,6 +646,7 @@ object-fit: cover;
     z-index: 2000;
 
     transition: transform 0.2s; /* Smooth transition when pausing */
+    user-select: none;
 }
 #modalOverlay {
     display: none;
@@ -684,9 +685,12 @@ object-fit: cover;
     /* Ensure the modal is above the overlay */
     color:black;
     top: 0;
+    /* hide it to the right */
     right: -60vw;
     transition: right 0.12s ease;
+    overflow-x: hidden;
     overflow-y: auto;
+    user-select: none;
 }
 #modalContent ol{
     list-style:none;
@@ -760,6 +764,9 @@ object-fit: cover;
     100%{
         transform: rotate(360deg);
     }
+}
+.not-highlightable {
+    user-select: none;
 }
 
 
