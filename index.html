@@ -714,12 +714,14 @@
             modalOverlay.style.display = 'block';
             modalContent.style.right = 0;
             document.body.style.overflow = 'hidden'; // Prevent scrolling
+            document.documentElement.style.overflow = 'hidden';// not yet in chinese ver
         });
 
         modalOverlay.addEventListener('click', () => {
             modalOverlay.style.display = 'none';
             modalContent.style.right = "-60vw"
             document.body.style.overflow = 'auto'; // Restore scrolling
+            document.documentElement.style.overflow = 'auto';
         });
         
         $("#Home_mobile").on("click", function() {
