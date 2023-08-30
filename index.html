@@ -314,7 +314,7 @@
                             <div class="swiper-slide">
                                 <div class="project-container">
                                     <a href="https://github.com/zhengzihao2002/Simple-Contact-System" target="_blank">
-                                        <div class="proj-img" style="background-image: url(projects-images/scs.png); background-position: 0 0;"></div>
+                                        <div class="proj-img" style="background-image: url(projects-images/scs.png); background-position: 0 -100px;"></div>
                                         
                                     </a>
                                     <div class="proj-exp">
@@ -407,6 +407,7 @@
                     
                 </div>
             </div>
+            <!-- auto slide script -->
             <script>
                 let autoClickInterval;
 
@@ -623,11 +624,13 @@
         <!-- disclaimer -->
         <p id="disclaimer"><i style="color: red;">Disclaimer</i>: This is only a BETA version feature which is still under testing. MAY occasionally produce incorrect data (although NEVER happened before). Using this feature automatically means you acknowledge this information.</p>
     </div>
+    <!-- secret script -->
     <script>
         let closeSecret = document.getElementById('closeSecret');
         let secretBox = document.getElementById('secretBox');
         closeSecret.addEventListener('click', function() {
-            secretBox.style.display = "none";
+            // secretBox.style.display = "none";
+            $('#secretBox').fadeOut(200);// 0.2秒
         });
 
         const optionSelect = document.getElementById('optionSelect');
@@ -700,7 +703,7 @@
             return hashedData;
         }
     </script>
-
+    <!-- mobile script -->
     <script>
         const openModalButton = document.getElementById('openModal');
         const closeModalButton = document.getElementById('closeModal');
@@ -780,7 +783,8 @@
         });
 
         $("#NONONO").on("click",function(){
-            $("#secretBox").css("display","block")
+            // $("#secretBox").css("display","block")
+            $('#secretBox').fadeIn(200);// 0.3秒
         });
 
     </script>
