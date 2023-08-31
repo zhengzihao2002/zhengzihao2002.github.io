@@ -26,7 +26,6 @@
 	
 </head>
 <body>
-    <div class="site_wrapper" style="height: 100vh;">
     
         <header>
             <div class="logo">
@@ -552,7 +551,7 @@
             const modalContent = document.getElementById('modalContent');
             let mobile_tips = document.querySelectorAll('.mobile_tip');
             let arrow = document.querySelector(".icon-arrow-right2");
-            let main_area = document.querySelector(".site_wrapper");
+            // let main_area = document.querySelector(".site_wrapper");
 
             openModalButton.addEventListener('click', () => {
                 modalOverlay.style.display = 'block';
@@ -564,8 +563,8 @@
                     arrow.classList.toggle("showText");
                 }, 120);
                 // document.body.style.overflow = 'hidden'; // Prevent scrolling
-                // document.documentElement.style.overflow = 'hidden';
-                main_area.style.overflow = "hidden";
+                document.documentElement.style.overflow = 'hidden';
+                // main_area.style.overflow = "hidden";
             });
 
             modalOverlay.addEventListener('click', () => {
@@ -575,8 +574,8 @@
                 mobile_tips[1].classList.toggle('showText');
                 arrow.classList.toggle("showText");
                 // document.body.style.overflow = 'auto'; // Restore scrolling
-                // document.documentElement.style.overflow = 'auto';
-                main_area.style.overflow= "auto";
+                document.documentElement.style.overflow = 'auto';
+                // main_area.style.overflow= "auto";
             });
             
             $("#Home_mobile").on("click", function() {
@@ -669,6 +668,5 @@
             <span style="float: right;">&copy; 2022 郑子豪 拥有所有版权.</span>
             <span>Verison 1.4</span>
         </footer>
-    </div>
 </body>
 </html>
