@@ -267,7 +267,7 @@
                             <!-- todo list -->
                             <div class="swiper-slide">
                                 <div class="project-container">
-                                    <a href="javascript:;">
+                                    <a href="https://github.com/zhengzihao2002/ToDoList" target="_blank">
                                         <div class="proj-img" style="background-image: url(../projects-images/tdl.png);"></div>
                                         
                                     </a>
@@ -283,7 +283,7 @@
                             <!-- ems -->
                             <div class="swiper-slide">
                                 <div class="project-container">
-                                    <a href="javascript:;">
+                                    <a href="https://github.com/zhengzihao2002/Employee-Management-System" target="_blank">
                                         <div class="proj-img" style="background-image: url(../projects-images/ems.png);"></div>
                                         
                                     </a>
@@ -298,8 +298,8 @@
                             <!-- phone book -->
                             <div class="swiper-slide">
                                 <div class="project-container">
-                                    <a href="javascript:;">
-                                        <div class="proj-img" style="background-image: url(../projects-images/scs.png); background-position: 0 0;"></div>
+                                    <a href="https://github.com/zhengzihao2002/Simple-Contact-System" target="_blank">
+                                        <div class="proj-img" style="background-image: url(../projects-images/scs.png); background-position: 0 -100px;"></div>
                                         
                                     </a>
                                     <div class="proj-exp">
@@ -313,7 +313,7 @@
                             <!-- word wrap -->
                             <div class="swiper-slide">
                                 <div class="project-container">
-                                    <a href="javascript:;">
+                                    <a href="https://github.com/zhengzihao2002/CS214/tree/main/CS214/Word%20Wrapping" target="_blank">
                                         <div class="proj-img" style="background-image: url(../projects-images/ww.png);"></div>
                                         
                                     </a>
@@ -328,7 +328,7 @@
                             <!-- songlib -->
                             <div class="swiper-slide">
                                 <div class="project-container">
-                                    <a href="javascript:;">
+                                    <a href="https://github.com/zhengzihao2002/Songlib" target="_blank">
                                         <div class="proj-img" style="background-image: url(../projects-images/songlib.png);"></div>
                                         
                                     </a>
@@ -343,7 +343,7 @@
                             <!-- chess -->
                             <div class="swiper-slide">
                                 <div class="project-container">
-                                    <a href="javascript:;">
+                                    <a href="https://github.com/zhengzihao2002/Chess" target="_blank">
                                         <div class="proj-img" style="background-image: url(../projects-images/chess.jpg);background-position: center center;"></div>
                                         
                                     </a>
@@ -393,8 +393,34 @@
                 </div>
             </div>
         </section>
+        <!-- auto slide script -->
+        <script>
+            let autoClickInterval;
 
-        
+            function startAutoClick() {
+                autoClickInterval = setInterval(function() {
+                    if (!$(".portfolio > .container > .body").is(":hover")) {
+                        $(".swiper-button-next").click();
+                    }
+                }, 4000);
+            }
+
+            function stopAutoClick() {
+                clearInterval(autoClickInterval);
+            }
+
+            $(document).ready(function() {
+                startAutoClick();
+                
+                $(".portfolio > .container > .body").hover(function() {
+                    stopAutoClick();
+                }, function() {
+                    startAutoClick();
+                });
+            });
+        </script>
+
+        <!-- section 5 - contacts -->
         <section class="contact">
             <div class="container">
                 <div class="head">
@@ -518,21 +544,51 @@
         </dl>
     </div>
     <script>
+        function disableScroll() {
+            // Get the current page scroll position in the vertical direction
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+           
+            // Get the current page scroll position in the horizontal direction 
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+      
+            // if any scroll is attempted,set this to the previous value
+            window.onscroll = function() {
+                window.scrollTo(scrollLeft, scrollTop);
+            };
+        }
+        function enableScroll() {
+            window.onscroll = function() {};
+        }
         const openModalButton = document.getElementById('openModal');
         const closeModalButton = document.getElementById('closeModal');
         const modalOverlay = document.getElementById('modalOverlay');
         const modalContent = document.getElementById('modalContent');
+        let mobile_tips = document.querySelectorAll('.mobile_tip');
+        let arrow = document.querySelector(".icon-arrow-right2");
 
         openModalButton.addEventListener('click', () => {
+            disableScroll();
             modalOverlay.style.display = 'block';
             modalContent.style.right = 0;
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            
+            setTimeout(() => {
+                mobile_tips[0].classList.toggle('showText');
+                mobile_tips[1].classList.toggle('showText');
+                arrow.classList.toggle("showText");
+            }, 120);
+            // document.body.style.overflow = 'hidden'; // Prevent scrolling
+            document.documentElement.style.overflow = 'hidden';
         });
 
         modalOverlay.addEventListener('click', () => {
+            enableScroll();
             modalOverlay.style.display = 'none';
             modalContent.style.right = "-60vw"
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            mobile_tips[0].classList.toggle('showText');
+            mobile_tips[1].classList.toggle('showText');
+            arrow.classList.toggle("showText");
+            // document.body.style.overflow = 'auto'; // Restore scrolling
+            document.documentElement.style.overflow = 'auto';
         });
         
         $("#Home_mobile").on("click", function() {
@@ -593,6 +649,11 @@
             $("body,html").stop().animate({
                 scrollTop: $(".contact").offset().top + 5
             });
+        });
+
+        $("#NONONO").on("click",function(){
+            // $("#secretBox").css("display","block")
+            $('#secretBox').fadeIn(200);// 0.3秒
         });
 
     </script>

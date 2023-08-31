@@ -539,8 +539,8 @@
     <button id="openModal" class="icon-menu"></button>
     <div id="modalOverlay">
         <div class="modContainer">
-            <p>Click here</p>
-            <p>to close</p>
+            <p class="mobile_tip">Click here</p>
+            <p class="mobile_tip">to close</p>
             <em class="icon-arrow-right2"></em>
         </div>
     </div>
@@ -705,22 +705,50 @@
     </script>
     <!-- mobile script -->
     <script>
+        function disableScroll() {
+            // Get the current page scroll position in the vertical direction
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+           
+            // Get the current page scroll position in the horizontal direction 
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+      
+            // if any scroll is attempted,set this to the previous value
+            window.onscroll = function() {
+                window.scrollTo(scrollLeft, scrollTop);
+            };
+        }
+        function enableScroll() {
+            window.onscroll = function() {};
+        }
         const openModalButton = document.getElementById('openModal');
         const closeModalButton = document.getElementById('closeModal');
         const modalOverlay = document.getElementById('modalOverlay');
         const modalContent = document.getElementById('modalContent');
+        let mobile_tips = document.querySelectorAll('.mobile_tip');
+        let arrow = document.querySelector(".icon-arrow-right2");
 
         openModalButton.addEventListener('click', () => {
+            disableScroll();
             modalOverlay.style.display = 'block';
             modalContent.style.right = 0;
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-            document.documentElement.style.overflow = 'hidden';// not yet in chinese ver
+            
+            setTimeout(() => {
+                mobile_tips[0].classList.toggle('showText');
+                mobile_tips[1].classList.toggle('showText');
+                arrow.classList.toggle("showText");
+            }, 120);
+            // document.body.style.overflow = 'hidden'; // Prevent scrolling
+            document.documentElement.style.overflow = 'hidden';
         });
 
         modalOverlay.addEventListener('click', () => {
+            enableScroll();
             modalOverlay.style.display = 'none';
             modalContent.style.right = "-60vw"
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            mobile_tips[0].classList.toggle('showText');
+            mobile_tips[1].classList.toggle('showText');
+            arrow.classList.toggle("showText");
+            // document.body.style.overflow = 'auto'; // Restore scrolling
             document.documentElement.style.overflow = 'auto';
         });
         
@@ -791,6 +819,12 @@
 
     </script>
     
+    <!-- <script>
+        setTimeout(function() {
+        document.documentElement.style.overflow = 'hidden';
+        }, 2000);
+
+    </script> -->
 
 	<footer>
         <ul class="horizontal" style="float: left;">

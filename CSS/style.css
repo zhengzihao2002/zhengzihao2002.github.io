@@ -681,6 +681,15 @@ object-fit: cover;
     text-align: center;
     display: block;
     font-size: 50px;
+    opacity: 0;
+}
+#modalOverlay p.showText,#modalOverlay em.showText{
+    transition: opacity 0.6s ease-in; 
+    -webkit-transition: opacity .6s ease-in;
+    opacity: 1;
+}
+.icon-arrow-right2{
+    opacity: 0;
 }
 #modalOverlay em{
     display: block;
@@ -688,6 +697,7 @@ object-fit: cover;
     text-align: center;
     font-size: 75px;
 }
+
 #modalContent {
     position: fixed;
     height: 100vh;
