@@ -705,21 +705,21 @@
     </script>
     <!-- mobile script -->
     <script>
-        function disableScroll() {
-            // Get the current page scroll position in the vertical direction
-            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        // function disableScroll() {
+        //     // Get the current page scroll position in the vertical direction
+        //     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
            
-            // Get the current page scroll position in the horizontal direction 
-            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        //     // Get the current page scroll position in the horizontal direction 
+        //     scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
       
-            // if any scroll is attempted,set this to the previous value
-            window.onscroll = function() {
-                window.scrollTo(scrollLeft, scrollTop);
-            };
-        }
-        function enableScroll() {
-            window.onscroll = function() {};
-        }
+        //     // if any scroll is attempted,set this to the previous value
+        //     window.onscroll = function() {
+        //         window.scrollTo(scrollLeft, scrollTop);
+        //     };
+        // }
+        // function enableScroll() {
+        //     window.onscroll = function() {};
+        // }
         const openModalButton = document.getElementById('openModal');
         const closeModalButton = document.getElementById('closeModal');
         const modalOverlay = document.getElementById('modalOverlay');
@@ -728,7 +728,7 @@
         let arrow = document.querySelector(".icon-arrow-right2");
 
         openModalButton.addEventListener('click', () => {
-            disableScroll();
+            // disableScroll();
             modalOverlay.style.display = 'block';
             modalContent.style.right = 0;
             
@@ -742,7 +742,7 @@
         });
 
         modalOverlay.addEventListener('click', () => {
-            enableScroll();
+            // enableScroll();
             modalOverlay.style.display = 'none';
             modalContent.style.right = "-60vw"
             mobile_tips[0].classList.toggle('showText');
@@ -819,12 +819,12 @@
 
     </script>
     
-    <!-- <script>
+    <script>
         setTimeout(function() {
         document.documentElement.style.overflow = 'hidden';
         }, 2000);
 
-    </script> -->
+    </script>
 
 	<footer>
         <ul class="horizontal" style="float: left;">
