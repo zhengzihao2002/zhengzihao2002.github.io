@@ -713,6 +713,13 @@
             let mobile_tips = document.querySelectorAll('.mobile_tip');
             let arrow = document.querySelector(".icon-arrow-right2");
 
+            modalOverlay.addEventListener('touchmove',(e)=>
+                e.preventDefault()
+            );
+            modalContent.addEventListener('touchmove',(e)=>
+                e.preventDefault()
+            );
+
             openModalButton.addEventListener('click', () => {
                 modalOverlay.style.display = 'block';
                 modalContent.style.right = 0;
@@ -724,9 +731,6 @@
                 }, 120);
                 // document.body.style.overflow = 'hidden'; // Prevent scrolling
                 // document.documentElement.style.overflow = 'hidden';
-                modalOverlay.addEventListener('touchmove',(e)=>
-                    e.preventDefault()
-                );
             });
 
             modalOverlay.addEventListener('click', () => {
