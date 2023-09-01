@@ -624,6 +624,7 @@
                 // document.documentElement.style.overflow = 'auto';
             });
             
+            var mobileTip = $(".mobile_tip");
             $("#Home_mobile").on("click", function() {
                 // Code to execute before scrollTop animation
                 $("#modalOverlay").css("display", "none");
@@ -634,6 +635,10 @@
                 $("body,html").stop().animate({
                     scrollTop: 0
                 });
+
+                mobileTip.eq(0).toggleClass('showText');
+                mobileTip.eq(1).toggleClass('showText');
+                $(".icon-arrow-right2").toggleClass('showText');
             });
 
             $("#About_mobile").on("click", function() {
@@ -646,6 +651,10 @@
                 $("body,html").stop().animate({
                     scrollTop: $(".info").offset().top - 50
                 });
+
+                mobileTip.eq(0).toggleClass('showText');
+                mobileTip.eq(1).toggleClass('showText');
+                $(".icon-arrow-right2").toggleClass('showText');
             });
 
             $("#Skills_mobile").on("click", function() {
@@ -658,6 +667,10 @@
                 $("body,html").stop().animate({
                     scrollTop: $(".skill").offset().top - 50
                 });
+
+                mobileTip.eq(0).toggleClass('showText');
+                mobileTip.eq(1).toggleClass('showText');
+                $(".icon-arrow-right2").toggleClass('showText');
             });
 
             $("#Portfolio_mobile").on("click", function() {
@@ -670,6 +683,10 @@
                 $("body,html").stop().animate({
                     scrollTop: $(".portfolio").offset().top - 50
                 });
+
+                mobileTip.eq(0).toggleClass('showText');
+                mobileTip.eq(1).toggleClass('showText');
+                $(".icon-arrow-right2").toggleClass('showText');
             });
 
             $("#Contact_mobile").on("click", function() {
@@ -682,6 +699,10 @@
                 $("body,html").stop().animate({
                     scrollTop: $(".contact").offset().top + 5
                 });
+
+                mobileTip.eq(0).toggleClass('showText');
+                mobileTip.eq(1).toggleClass('showText');
+                $(".icon-arrow-right2").toggleClass('showText');
             });
 
             $("#NONONO").on("click",function(){
