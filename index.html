@@ -639,14 +639,14 @@
                 // secretBox.style.display = "none";
                 $('#secretBox').fadeOut(200);// 0.2秒
             });
-                secretBox.addEventListener('touchmove',(e)=>
-                    e.preventDefault()
-                );
-            document.addEventListener('touchstart', function(event) {
-                if (event.target.tagName.toLowerCase() === 'input' || event.target.tagName.toLowerCase() === 'textarea') {
-                    event.preventDefault();
-                }
-            }, { passive: false });
+            // secretBox.addEventListener('touchmove',(e)=>
+            //     e.preventDefault()
+            // );
+            // document.addEventListener('touchstart', function(event) {
+            //     if (event.target.tagName.toLowerCase() === 'input' || event.target.tagName.toLowerCase() === 'textarea') {
+            //         event.preventDefault();
+            //     }
+            // }, { passive: false });
 
             const optionSelect = document.getElementById('optionSelect');
             const inputBox = document.getElementById('textInput');
