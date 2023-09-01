@@ -653,6 +653,8 @@
 
             optionSelect.addEventListener('change', async function () {
                 feedback.textContent = "Result will be displayed here.";
+                feedback.classList = '';
+                inputBox.value = '';
                 const selectedOption = optionSelect.value;
                 if (selectedOption === 'birthday') {
                     inputBox.setAttribute('placeholder', 'MMDDYYYY');
