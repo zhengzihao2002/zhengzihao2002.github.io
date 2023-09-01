@@ -197,6 +197,9 @@ nav li.active a::before {
         height: fit-content;
         margin-bottom: 5vh;
     }
+    .proj-exp h4{
+        display: none;
+    }
 }
 @media (orientation:landscape){
     .info,.skill,.portfolio {
@@ -210,6 +213,9 @@ nav li.active a::before {
     }
     .contact .body{
         height: 25vh;
+    }
+    .proj-exp h4{
+        display: block;
     }
 }
 /* section 1 */
