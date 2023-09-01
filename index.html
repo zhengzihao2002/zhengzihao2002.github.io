@@ -617,12 +617,12 @@
                 <option value="name">Check Zihao's Crush's Name</option>
                 <option value="birthday">Check Zihao's Crush's Birthday</option>
             </select>
-            <input style="height: 100px;width: 100%;font-size: 40px;margin-top: 60px;box-sizing: border-box;margin-right: 30px;" type="text" id="textInput" placeholder="">
+            <input style="height: 100px;width: 100%;font-size: 40px;margin-top: 60px;box-sizing: border-box;margin-right: 30px;" type="text" id="textInput" placeholder="Enter Name Here">
             <p id="tip" style="color: gray;font-size: 50px;"></p>
             <button style="height: 100px;width: 300px;font-size: 40px" onclick="check()">Check</button>
             
             <!-- feedback -->
-            <p id="feedback"></p>
+            <p id="feedback">Result will be displayed here.</p>
             
 
             <!-- exit button -->
@@ -642,11 +642,6 @@
             secretBox.addEventListener('touchmove',(e)=>
                 e.preventDefault()
             );
-            // document.addEventListener('touchstart', function(event) {
-            //     if (event.target.tagName.toLowerCase() === 'input' || event.target.tagName.toLowerCase() === 'textarea') {
-            //         event.preventDefault();
-            //     }
-            // }, { passive: false });
 
             const optionSelect = document.getElementById('optionSelect');
             const inputBox = document.getElementById('textInput');
@@ -657,13 +652,13 @@
 
 
             optionSelect.addEventListener('change', async function () {
-                feedback.textContent = "";
+                feedback.textContent = "Result will be displayed here.";
                 const selectedOption = optionSelect.value;
                 if (selectedOption === 'birthday') {
                     inputBox.setAttribute('placeholder', 'MMDDYYYY');
-                    tipBox.textContent ="";
+                    tipBox.textContent ="Example: July 4, 2002 = 07042002";
                 } else if (selectedOption === 'name') {
-                    inputBox.setAttribute('placeholder', '');
+                    inputBox.setAttribute('placeholder', 'Enter Name Here');
                     tipBox.textContent = "Format: two words with space in between, first letter of each word upper case"
                 }
             });

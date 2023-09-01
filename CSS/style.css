@@ -777,12 +777,14 @@ dl{
     margin-top: 10px;
     font-size: 45px;
 }
-
-.correct {
+#feedback{
+    color: black;
+}
+#secretBox p.correct {
     color: green;
 }
 
-.incorrect {
+#secretBox p.incorrect {
     color: red;
 }
 #secretBox {
