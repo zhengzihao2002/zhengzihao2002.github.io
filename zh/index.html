@@ -546,12 +546,50 @@
         </div>
         <!-- mobile script -->
         <script>
+            function getTranslateY(element) {
+                var style = window.getComputedStyle(element);
+                var matrix = new WebKitCSSMatrix(style.transform);
+                return matrix.m42;
+            }
+
             const openModalButton = document.getElementById('openModal');
             const closeModalButton = document.getElementById('closeModal');
             const modalOverlay = document.getElementById('modalOverlay');
             const modalContent = document.getElementById('modalContent');
             let mobile_tips = document.querySelectorAll('.mobile_tip');
             let arrow = document.querySelector(".icon-arrow-right2");
+            let realContent = modalContent.querySelector('.contentWrapper');
+
+
+            
+            if(realContent.clientHeight>modalContent.clientHeight){
+                let startY; // position where finger starts
+                let startTransY;// initial translateY before finger got into the game
+                const heightDifference = Math.abs(realContent.clientHeight - modalContent.clientHeight);
+                modalContent.addEventListener('touchstart', (event) => {
+                    startTransY = getTranslateY(realContent);
+                    startY = event.touches[0].clientY;
+                });
+                modalContent.addEventListener('touchmove', (event) => {
+                    const currentY = event.touches[0].clientY;
+                    let difference = currentY - startY;
+                    // Calculate the new translation value
+                    const newTranslateY = startTransY + difference;
+                    console.log(newTranslateY);
+                    if(newTranslateY>0){
+                        // Apply the translation with modifies
+                        realContent.style.transform = `translateY(0px)`;
+                    }else if(Math.abs(newTranslateY)<=heightDifference){
+                        // Apply the translation with modifies
+                        realContent.style.transform = `translateY(${newTranslateY}px)`;
+                    }else{
+                        // Apply the translation
+                        realContent.style.transform = `translateY(${-heightDifference}px)`;
+                    }
+                }); 
+            }
+            
+
 
             modalOverlay.addEventListener('touchmove',(e)=>
                 e.preventDefault()

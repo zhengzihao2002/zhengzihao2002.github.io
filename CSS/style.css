@@ -673,7 +673,12 @@ object-fit: cover;
     z-index: 1000;
     /* Ensure the overlay is above other content */
 }
-
+.contentWrapper{
+    padding-top: 16px;
+}
+dl{
+    margin-top: 0;
+}
 .modContainer{
     padding-top:40vh;
     height: 100vh;

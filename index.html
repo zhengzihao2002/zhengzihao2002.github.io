@@ -546,61 +546,63 @@
             </div>
         </div>
         <div id="modalContent">
-            <dl style="margin-bottom: 100px;">
-                <dt>Navigation Bar</dt>
-                <dd style="margin: 0;">
-                    <ol>
-                        <li id="Home_mobile">Home</li>
-                        <li id="About_mobile">About</li>
-                        <li id="Skills_mobile">Skills</li>
-                        <li id="Portfolio_mobile">Portfolio</li>
-                        <li id="Contact_mobile">Contact</li>
-                        <li><a href="zh/" style="color:red;font-weight:bolder;">Chinese Site</a></li>
-                    </ol>
-                </dd>
-            </dl>
-            <dl>
-                <dt>BETA features</dt>
-                <dd style="margin: 0;">
-                    <ol>
-                        <li id="NONONO">정지호의 비밀(Don't click me)</li>
-                        <li id="exo1" style="word-break: break-word; white-space: normal;overflow: visible;line-height: 1.2;">
-                            Baby, Don't Cry (인어의 눈물)  - EXO(엑소)
-                            <script>
+            <div class="contentWrapper" style="transform: translateX(0px);">
+                <dl style="margin-bottom: 100px;">
+                    <dt>Navigation Bar</dt>
+                    <dd style="margin: 0;">
+                        <ol>
+                            <li id="Home_mobile">Home</li>
+                            <li id="About_mobile">About</li>
+                            <li id="Skills_mobile">Skills</li>
+                            <li id="Portfolio_mobile">Portfolio</li>
+                            <li id="Contact_mobile">Contact</li>
+                            <li><a href="zh/" style="color:red;font-weight:bolder;">Chinese Site</a></li>
+                        </ol>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>BETA features</dt>
+                    <dd style="margin: 0;">
+                        <ol>
+                            <li id="NONONO">정지호의 비밀(Don't click me)</li>
+                            <li id="exo1" style="word-break: break-word; white-space: normal;overflow: visible;line-height: 1.2;">
+                                Baby, Don't Cry (인어의 눈물)  - EXO(엑소)
+                                <script>
+                                    
+                                    const audioControl = document.getElementById('exo1');
+                                    const openModal = document.getElementById('openModal');
+                                    const audio = new Audio('music/Baby, Don\'t Cry (인어의 눈물)  - EXO(엑소).mp3');
+                                    let isPlaying = false;
+                                    let isRotating = false;
                                 
-                                const audioControl = document.getElementById('exo1');
-                                const openModal = document.getElementById('openModal');
-                                const audio = new Audio('music/Baby, Don\'t Cry (인어의 눈물)  - EXO(엑소).mp3');
-                                let isPlaying = false;
-                                let isRotating = false;
-                            
-                                audioControl.addEventListener('click', () => {
-                                if (isPlaying) {
-                                    audio.pause();
-                                    audioControl.style.color = "#666666";
-                                    openModal.style.animation = 'none';
-                                } else {
-                                    audio.play();
-                                    audioControl.style.color = "green";
-                                    openModal.style.animationPlayState = 'running';
-                                    if (!isRotating) {
-                                        openModal.style.animation = 'rotate 4s linear infinite'; // Apply animation
-                                        isRotating = true;
+                                    audioControl.addEventListener('click', () => {
+                                    if (isPlaying) {
+                                        audio.pause();
+                                        audioControl.style.color = "#666666";
+                                        openModal.style.animation = 'none';
+                                    } else {
+                                        audio.play();
+                                        audioControl.style.color = "green";
+                                        openModal.style.animationPlayState = 'running';
+                                        if (!isRotating) {
+                                            openModal.style.animation = 'rotate 4s linear infinite'; // Apply animation
+                                            isRotating = true;
+                                        }
                                     }
-                                }
-                                isPlaying = !isPlaying;
-                                });
+                                    isPlaying = !isPlaying;
+                                    });
 
-                                audio.addEventListener("ended",()=>{
-                                    audioControl.style.color = "#666666";
-                                    openModal.style.animation = 'none';
-                                    isPlaying = false;
-                                });
-                            </script>
-                        </li>
-                    </ol>
-                </dd>
-            </dl>
+                                    audio.addEventListener("ended",()=>{
+                                        audioControl.style.color = "#666666";
+                                        openModal.style.animation = 'none';
+                                        isPlaying = false;
+                                    });
+                                </script>
+                            </li>
+                        </ol>
+                    </dd>
+                </dl>
+            </div>
         </div>
         <div id="secretBox">
             <!-- title -->
@@ -706,12 +708,50 @@
         </script>
         <!-- mobile script -->
         <script>
+            function getTranslateY(element) {
+                var style = window.getComputedStyle(element);
+                var matrix = new WebKitCSSMatrix(style.transform);
+                return matrix.m42;
+            }
+
             const openModalButton = document.getElementById('openModal');
             const closeModalButton = document.getElementById('closeModal');
             const modalOverlay = document.getElementById('modalOverlay');
             const modalContent = document.getElementById('modalContent');
             let mobile_tips = document.querySelectorAll('.mobile_tip');
             let arrow = document.querySelector(".icon-arrow-right2");
+            let realContent = modalContent.querySelector('.contentWrapper');
+
+
+            
+            if(realContent.clientHeight>modalContent.clientHeight){
+                let startY; // position where finger starts
+                let startTransY;// initial translateY before finger got into the game
+                const heightDifference = Math.abs(realContent.clientHeight - modalContent.clientHeight);
+                modalContent.addEventListener('touchstart', (event) => {
+                    startTransY = getTranslateY(realContent);
+                    startY = event.touches[0].clientY;
+                });
+                modalContent.addEventListener('touchmove', (event) => {
+                    const currentY = event.touches[0].clientY;
+                    let difference = currentY - startY;
+                    // Calculate the new translation value
+                    const newTranslateY = startTransY + difference;
+                    console.log(newTranslateY);
+                    if(newTranslateY>0){
+                        // Apply the translation with modifies
+                        realContent.style.transform = `translateY(0px)`;
+                    }else if(Math.abs(newTranslateY)<=heightDifference){
+                        // Apply the translation with modifies
+                        realContent.style.transform = `translateY(${newTranslateY}px)`;
+                    }else{
+                        // Apply the translation
+                        realContent.style.transform = `translateY(${-heightDifference}px)`;
+                    }
+                }); 
+            }
+            
+
 
             modalOverlay.addEventListener('touchmove',(e)=>
                 e.preventDefault()
