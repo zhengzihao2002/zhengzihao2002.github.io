@@ -613,11 +613,11 @@
             <p style="height: 100px;width: 100%;color: #000000;font-size: 40px;">Zihao can't directly tell you his secrets, but if you know it, you can verify it here!</p>
 
             <!-- options and input -->
-            <select style="height: 100px;width: 350px;font-size: 20px;" id="optionSelect">
+            <select style="height: 100px;width: 420px;font-size: 30px;" id="optionSelect">
                 <option value="name">Check Zihao's Crush's Name</option>
                 <option value="birthday">Check Zihao's Crush's Birthday</option>
             </select>
-            <input style="height: 100px;width: 350px;font-size: 20px" type="text" id="textInput" placeholder="">
+            <input style="height: 100px;width: 420px;font-size: 30px" type="text" id="textInput" placeholder="">
             <p id="tip" style="color: gray;font-size: 50px;"></p>
             <button style="height: 100px;width: 300px;font-size: 40px" onclick="check()">Check</button>
             
@@ -639,9 +639,14 @@
                 // secretBox.style.display = "none";
                 $('#secretBox').fadeOut(200);// 0.2秒
             });
-            secretBox.addEventListener('touchmove',(e)=>
-                e.preventDefault()
-            );
+                secretBox.addEventListener('touchmove',(e)=>
+                    e.preventDefault()
+                );
+            document.addEventListener('touchstart', function(event) {
+                if (event.target.tagName.toLowerCase() === 'input' || event.target.tagName.toLowerCase() === 'textarea') {
+                    event.preventDefault();
+                }
+            }, { passive: false });
 
             const optionSelect = document.getElementById('optionSelect');
             const inputBox = document.getElementById('textInput');
