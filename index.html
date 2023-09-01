@@ -617,7 +617,7 @@
                 <option value="name">Check Zihao's Crush's Name</option>
                 <option value="birthday">Check Zihao's Crush's Birthday</option>
             </select>
-            <input style="height: 100px;width: 100%;font-size: 40px;margin-top: 60px;" type="text" id="textInput" placeholder="">
+            <input style="height: 100px;width: 100%;font-size: 40px;margin-top: 60px;box-sizing: border-box;margin-right: 30px;" type="text" id="textInput" placeholder="">
             <p id="tip" style="color: gray;font-size: 50px;"></p>
             <button style="height: 100px;width: 300px;font-size: 40px" onclick="check()">Check</button>
             
@@ -639,9 +639,9 @@
                 // secretBox.style.display = "none";
                 $('#secretBox').fadeOut(200);// 0.2秒
             });
-            // secretBox.addEventListener('touchmove',(e)=>
-            //     e.preventDefault()
-            // );
+            secretBox.addEventListener('touchmove',(e)=>
+                e.preventDefault()
+            );
             // document.addEventListener('touchstart', function(event) {
             //     if (event.target.tagName.toLowerCase() === 'input' || event.target.tagName.toLowerCase() === 'textarea') {
             //         event.preventDefault();
