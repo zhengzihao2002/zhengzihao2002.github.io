@@ -679,6 +679,23 @@ object-fit: cover;
 dl{
     margin-top: 0;
 }
+.topright{
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    background-color: rgb(222, 72, 72);
+
+    height: 3rem;
+    line-height: 3rem;
+
+    width: 5rem;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    color: white;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+}
 .modContainer{
     padding-top:40vh;
     height: 100vh;

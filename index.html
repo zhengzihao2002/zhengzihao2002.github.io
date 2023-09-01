@@ -564,9 +564,13 @@
                     <dt>BETA features</dt>
                     <dd style="margin: 0;">
                         <ol>
-                            <li id="NONONO">정지호의 비밀(Don't click me)</li>
+                            <li id="NONONO">
+                                정지호의 비밀(Don't click me)
+                                <i class="topright">NEW</i>
+                            </li>
                             <li id="exo1" style="word-break: break-word; white-space: normal;overflow: visible;line-height: 1.2;">
                                 Baby, Don't Cry (인어의 눈물)  - EXO(엑소)
+                                <i class="topright" style="width: 6rem;top:-20px;right:10px;background-color: paleturquoise;color: black;">MUSIC</i>
                                 <script>
                                     
                                     const audioControl = document.getElementById('exo1');
@@ -635,6 +639,9 @@
                 // secretBox.style.display = "none";
                 $('#secretBox').fadeOut(200);// 0.2秒
             });
+            secretBox.addEventListener('touchmove',(e)=>
+                e.preventDefault()
+            );
 
             const optionSelect = document.getElementById('optionSelect');
             const inputBox = document.getElementById('textInput');
@@ -759,6 +766,7 @@
             modalContent.addEventListener('touchmove',(e)=>
                 e.preventDefault()
             );
+
 
             openModalButton.addEventListener('click', () => {
                 modalOverlay.style.display = 'block';
