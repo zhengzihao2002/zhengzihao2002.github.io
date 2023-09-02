@@ -656,6 +656,20 @@
 
             tipBox.textContent = "Format: two words with space in between, first letter of each word upper case"
 
+            let array1 = [
+                "My mind is blown. How did you know?",
+                "You read my mind like a book!",
+                "You are correct!",
+                "Zihao gives you a round of applause!",
+            ];
+            let array2 = [
+                "Incorrect. Try again.",
+                "You are wrong. Try again.",
+                "Nope. Good luck next time.",
+                "I think you need hints. Text Zihao for hints."
+            ];
+
+
 
             optionSelect.addEventListener('change', async function () {
                 feedback.textContent = "Result will be displayed here.";
@@ -685,29 +699,50 @@
                 const birthday = document.getElementById('textInput').value;
                 const hashedBirthday = await hashUsingWebCrypto(birthday);
 
+                const min1 = 1;
+                const max4 = 4;
+                const randomNum1To4 = Math.floor(Math.random() * (max4 - min1 + 1)) + min1;
+
+
                 const feedbackElement = document.getElementById('feedback');
                 if (hashedBirthday === expectedHash) {
-                    feedbackElement.innerText = "You are correct!";
+                    feedbackElement.innerText = array1[randomNum1To4-1];
                     feedbackElement.classList.remove('incorrect');
                     feedbackElement.classList.add('correct');
                 } else {
-                    feedbackElement.innerText = "You are wrong. Try again.";
+                    feedbackElement.innerText = array2[randomNum1To4-1];
                     feedbackElement.classList.remove('correct');
                     feedbackElement.classList.add('incorrect');
                 }
             }
             async function checkName() {
+                // if user follows the format
                 const expectedHash = "bb6f4d1a4ddad892c1dd1c035ab08291c34fea3ead211242842c0a420553a4ae";
+                // tries to unformat user's value and compare with our unformated answer
+                const secondExpectedHash = 'c27dc299a7be0e6ab2d8d1666551e42d67e219be577133ab82a2c1c2972663d4'
+
                 const name = document.getElementById('textInput').value;
                 const hashedName = await hashUsingWebCrypto(name);
 
+                // Step 1: Remove spaces in between
+                let stringWithoutSpacesInBetween = name.replace(/\s+/g, '');
+                // Step 2: Trim spaces in the front and end
+                let trimmedString = stringWithoutSpacesInBetween.trim();
+                // Step 3: Convert to lowercase
+                let unformatedHashedName = trimmedString.toLowerCase();
+                const hashedName2 = await hashUsingWebCrypto(unformatedHashedName);
+
+                const min1 = 1;
+                const max4 = 4;
+                const randomNum1To4 = Math.floor(Math.random() * (max4 - min1 + 1)) + min1;
+
                 const feedbackElement = document.getElementById('feedback');
-                if (hashedName === expectedHash) {
-                    feedbackElement.innerText = "You are correct!";
+                if (hashedName === expectedHash || hashedName2===secondExpectedHash) {
+                    feedbackElement.innerText = array1[randomNum1To4-1];
                     feedbackElement.classList.remove('incorrect');
                     feedbackElement.classList.add('correct');
                 } else {
-                    feedbackElement.innerText = "You are wrong. Better luck next time.";
+                    feedbackElement.innerText = array2[randomNum1To4-1];
                     feedbackElement.classList.remove('correct');
                     feedbackElement.classList.add('incorrect');
                 }
