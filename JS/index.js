@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
             for(let i=0;i<options.length-1;i++){
                 options[i].style.color = "white";
             }
-            
-            
+
+            // document.querySelector("nav a::before").style.background = "white";
+            document.querySelectorAll("nav a").forEach((links)=>{links.classList.add("scrolled");});
         }else {
             // if we haven't, set the height of the header back to its original value
             header.style.height = '';
@@ -33,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
             for(let i=0;i<options.length-1;i++){
                 options[i].style.color = "";
             }
-
+            
+            // document.querySelectorAll("nav a::before").style.background = "linear-gradient(to right, #243B55, #21897E)";
+            document.querySelectorAll("nav a").forEach((links)=>{links.classList.remove("scrolled");});
         }
     }
 

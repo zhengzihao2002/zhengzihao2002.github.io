@@ -66,6 +66,9 @@ body {
     }
 }
 
+.scrolled::before{
+    background: linear-gradient(to right, #bedcff, #b2f9f2);
+}
 header{
     display: flex;
     justify-content: space-between;
@@ -117,6 +120,7 @@ header{
 nav>ul>li>a{
     transition: font-size 0.2s ease-in-out;
     transition: background-color 0.2s ease-in-out;
+    transition: all 0.6s;
 }
 
 
@@ -127,10 +131,12 @@ nav ul {
     align-items: center;
     margin: 0;
     padding: 0;
+    transition: all 2.3s;
 }
 
 nav li {
     margin-left: 30px;
+    transition: all 2.3s;
 }
 
 nav li:first-child {
@@ -145,6 +151,8 @@ nav a {
     color: #2C3A47;
     /* color: #7da7ce; */
     position: relative;
+
+    transition: all 2.3s;
 }
 
 nav a::before {
@@ -154,8 +162,9 @@ nav a::before {
     left: 0;
     width: 0%;
     height: 3px;
-    background: linear-gradient(to right, #243B55, #21897E); /* Blue to Green gradient */
-    transition: width 0.3s;
+    background:black;
+    /* background: linear-gradient(to right, #243B55, #21897E); Blue to Green gradient */
+    transition: all 1.3s;
 }
 nav a.darkmode::before{
     background: linear-gradient(to right, #cf3f3f, #3d7cc7); 
