@@ -154,7 +154,10 @@
                     <!-- head -->
                     <div class="head">
                         <h1>Skills</h1>
-                        <p>Below are just some of my skills, up to 2022. I am not claiming to be a master in all of these skills, that would be amazing, but it is simply not true. With that said, I am confident that I can hold a position that utilizes any of the following competencies and increase my mastery in any of these skills if needed.</p>
+                        <!-- <p>Below are just some of my skills, up to 2022. I am not claiming to be a master in all of these skills, that would be amazing, but it is simply not true. With that said, I am confident that I can hold a position that utilizes any of the following competencies and increase my mastery in any of these skills if needed.</p> -->
+                        <p>
+                            Below is a compilation of my competencies as of 2022. While I don't claim to be an expert in all of these areas, I possess a solid foundation in each. I am well-prepared to take on a role that utilizes any of these skills and am committed to further enhancing my expertise as needed.
+                        </p>
                     </div>
                     <!-- body -->
                     <div class="body">
@@ -917,8 +920,22 @@
             });
 
             $("#NONONO").on("click",function(){
-                // $("#secretBox").css("display","block")
-                $('#secretBox').fadeIn(200);// 0.3秒
+
+                const currentDate = new Date();
+                const currentDayOfWeek = currentDate.getDay(); // 0 is Sunday, 1 is Monday, ..., 6 is Saturday
+                const currentDayOfMonth = currentDate.getDate();
+                if (!(currentDayOfWeek === 4 || currentDayOfMonth === 19)) {
+                    let input = prompt("This feature is only available on the 4th day of the week (Thursday) or the 19th day of the month.\n\nToday is NOT the 4 or 19!\n\nTo override this obstacle, enter a 3 digit lucky number or else come back on the correct day! If the number is correct it would automatically lead you to the page, or else nothing will happen.");
+
+                    if(input!=null && input=="419"){
+                        $('#secretBox').fadeIn(200);// 0.3秒
+                    }
+                }else{
+                    // $("#secretBox").css("display","block")
+                    $('#secretBox').fadeIn(200);// 0.3秒
+                }
+
+                
             });
 
         </script>
