@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             header.style.backgroundColor=  "#212529";
-            for(let i=0;i<options.length-1;i++){
+            for(let i=0;i<options.length;i++){
                 options[i].style.color = "white";
             }
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             header.style.backgroundColor=  "";
-            for(let i=0;i<options.length-1;i++){
+            for(let i=0;i<options.length;i++){
                 options[i].style.color = "";
             }
             
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             header.style.backgroundColor=  "#212529";
-            for(let i=0;i<options.length-1;i++){
+            for(let i=0;i<options.length;i++){
                 options[i].style.color = "white";
             }
             window.removeEventListener('scroll', smaller);
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navItems.forEach((item) => {
                 item.classList.remove('active');
             });
-            navItems[navItems.length - 2].classList.add('active');
+            navItems[navItems.length - 1].classList.add('active');
         }
         // Otherwise, check if the scroll position is within any of the sections
         else {

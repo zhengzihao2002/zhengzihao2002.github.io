@@ -136,7 +136,7 @@ nav ul {
 
 nav li {
     margin-left: 30px;
-    transition: all 2.3s;
+    transition: all 0.5s;
 }
 
 nav li:first-child {
@@ -152,7 +152,7 @@ nav a {
     /* color: #7da7ce; */
     position: relative;
 
-    transition: all 2.3s;
+    transition: all 1.3s;
 }
 
 nav a::before {
@@ -165,21 +165,26 @@ nav a::before {
     background:black;
     /* background: linear-gradient(to right, #243B55, #21897E); Blue to Green gradient */
     transition: all 1.3s;
+    
 }
 nav a.darkmode::before{
     background: linear-gradient(to right, #cf3f3f, #3d7cc7); 
 
 }
 
-nav>ul>li:last-child>a{
+/* nav>ul>li:last-child>a{
     font-style: italic;
-}
-nav>ul>li:last-child>a:hover::before{
+} */
+/* nav>ul>li:last-child>a:hover::before{
     width: 0;
-}
+} */
 
-nav a:hover::before {
+/* nav a:hover::before {
     width: 100%;
+} */
+nav li:hover {
+    /* width: 100%; */
+    transform: scale(1.2);
 }
 nav li.active a::before {
     width: 100%;
