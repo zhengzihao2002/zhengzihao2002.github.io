@@ -925,7 +925,7 @@
                 const currentDayOfWeek = currentDate.getDay(); // 0 is Sunday, 1 is Monday, ..., 6 is Saturday
                 const currentDayOfMonth = currentDate.getDate();
                 if (!(currentDayOfWeek === 4 || currentDayOfMonth === 19)) {
-                    let input = prompt("This feature is only available on the 4th day of the week (Thursday) or the 19th day of the month.\n\nToday is NOT the '4' or '19' ;)\n\nTo override this obstacle, enter a 3 digit passcode(lucky number). If the entered passcode is correct, you'll be automatically directed to the page, or else nothing will happen ◡̈");
+                    let input = prompt("This feature is only available on the 4th day of the week (Thursday) or the 19th day of the month.\n\nToday is NOT one of the days. ;)\n\nTo override this obstacle, enter a 3 digit passcode(lucky number). If the entered passcode is correct, you'll be automatically directed to the page, or else nothing will happen ◡̈");
 
                     if(input!=null && input=="419"){
                         $('#secretBox').fadeIn(200);// 0.3秒
